@@ -1,0 +1,111 @@
+.intent-footer {
+	background: $purple;
+	text-align: center;
+	color: #fff;
+	padding: 0;
+	position: relative;
+	z-index: 2;
+	@include bp(44) {
+		padding: 4em 0;
+	}
+	.three-list {
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		> li {
+			padding: 2em 0;
+			border-bottom: 1px solid white;
+			&:last-child {
+				border: none;
+			}
+			@include bp(44) {
+				width: 33.333%;
+				margin: 0;
+				border-bottom: none;
+				&:nth-child(2n) {
+					border-right: 1px solid white;
+					border-left: 1px solid white;
+				}
+				&:last-child {
+					margin: 0;
+				}
+			}
+			
+		}
+	}
+	a {
+		display: block;
+		margin: 0 auto;
+		font-size: 1.25em;
+		color: white;
+	}
+	.footer-logo {
+		max-width: 14em;
+		padding: 0 1em;
+		font-size: 1em;
+		@include bp(44) {
+			max-width: 20em;
+		}
+	}
+	img {
+		display: block;
+		width: 100%;
+	}
+	.gform_wrapper {
+		font-size: 0.5em;
+		text-align: left;
+		padding: 0 2em;
+		width: 100%;
+		max-width: 40em;
+		margin: 0 auto;
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			.gfield_label {
+				display: none;
+			}
+			label {
+				display: none;
+			}
+			input[type=text],
+			textarea {
+				width: 100%;
+				margin-bottom: 1em;
+				background: transparent;
+				border: 1px solid white;
+				padding: 0.5em 1em;
+				border-radius: 0.25em;
+				color: white;
+			}
+		}
+		.ginput_container_name {
+			input {
+				float: left;
+				width: 48%;
+				margin-right: 4%;
+			}
+			span {
+				&:last-of-type input {
+					margin-right: 0;
+				}
+			}
+		}
+		.gform_footer {
+			margin-top: 0;
+			input[type=submit] {
+				background: white;
+				width: 10em;
+				display: block;
+				padding: 1em;
+				color: $purple;
+				border: none;
+			}
+		}
+	}
+}
+.copyright {
+	font-size: 0.875em;
+}

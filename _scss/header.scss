@@ -1,0 +1,263 @@
+.site-header {
+	background: $dark-gray;
+	width: 100%;
+	z-index: 100;
+	transition: all 500ms ease-in-out;
+	&.sticky-nav {
+		border-bottom: 1px solid white;
+	}
+}
+.famnetwork-nav-container {
+	padding: 1em 5%;
+	background: rgba(51,51,51,0.85);
+	a {
+		display: inline-block;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 1em;
+		font-weight: 700;
+		font-family: 'Oswald', sans-serif;
+		letter-spacing: 1px;
+	}
+}
+.fam-header {
+	background: url(_i/fam-bg.jpg) top center no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	position: relative;
+	padding: 1em 0;
+	.famnetwork-nav-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 1em 5%;
+		background: rgba(51,51,51,0.85);
+		z-index: 1;
+	}
+}
+.site-logo {
+	display: block;
+	max-width: 8em;
+	@include bp(44) {
+		float: left;
+	}
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+#famnetwork-nav {
+	display: none;
+	position: relative;
+	@include bp(44) {
+		display: block;
+		float: right;
+		padding: 0.65em 0 0 0;
+	}
+	ul {
+		list-style: none;
+		margin: .875em 0 0;
+		padding: 0;
+		border-top: 1px solid white;
+		@include bp(44) {
+			float: left;
+			padding: 0;
+			margin: 0;
+			border: none;
+		}
+	}
+	li {
+		display: block;
+		font-size: 1.2em;
+		@include bp(44) {
+			display: inline;
+			margin: 0 0 0 1.5em;
+			text-align: left;
+			font-size: 1em;
+		}
+		a {
+			color: $gray;
+			padding: 0.75em 1em 0.75em 0;
+			@include bp(44) {
+				padding: 0;
+			}
+			&:hover {
+				text-decoration: none;
+				color: darken($gray, 15%);
+			}
+		}
+	}
+}
+.fam-header {
+	background: url(_i/fam-bg.jpg) top center no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	position: relative;
+}
+.fam-cart {
+	font-size: 1.3em;
+	padding: 1em 1em 1em 0.5em;
+	background: url(_i/famnetwork-cart.png) center center no-repeat;
+	background-size: auto 60%;
+	position: absolute;
+	top: -3.5em;
+	right: 5em;
+	&:hover {
+		text-decoration: none;
+	}
+	@include bp(44) {
+		margin: 0 0 0 1.5em;
+		padding: 0 0 0 0.5em;
+		height: 1.75em;
+		width: 2em;
+		position: relative;
+		top: auto;
+		right: auto;
+		text-align: center;
+		background-size: auto 100%;
+	}
+	.cart-count {
+		display: block;
+		position: absolute;
+		font-size: 0.75em;
+		left: 1.875em;
+		top: -0.25em;
+		@include bp(44) {
+			right: -0.65em;
+			top: -0.65em;
+			left: auto;
+		}
+	}
+}
+.fam-tagline {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: white;
+	width: 90%;
+	@include bp(44) {
+		width: 100%;
+	}
+	h1 {
+		margin-bottom: 0.35em;
+	}
+	h4 {
+		padding-bottom: 2em;
+	}
+	.clear-btn,
+	.white-btn {
+		font-size: 1.5em;
+		padding: 0.25em 1.25em;
+		width: 10em;
+		margin: 0 auto;
+		display: block;
+		@include bp(44) {
+			display: inline-block;
+		}
+	}
+	.clear-btn {
+		margin-bottom: 0.5em;
+		@include bp(44) {
+			margin-bottom: 0;
+			margin-right: 0.5em;
+		}
+	}
+	.white-btn {
+		@include bp(44) {
+			margin-left: 0.5em;
+		}
+	}
+}
+#toggle-nav {
+	border: 1px solid #fff;
+	padding: 0.15em 0.75em;
+	position: absolute;
+	right: 1em;
+	top: 1.5em;
+	&:hover {
+		text-decoration: none;
+		background: #fff;
+		color: $purple;
+	}
+	@include bp(44) {
+		display: none;
+	}
+}
+.register-form {
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100vh;
+	z-index: 200;
+	position: fixed;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	.form-wrapper {
+		background: white;
+		width: 40%;
+		height: 60%;
+		position: fixed;
+		margin: 0 auto;
+		top: 20%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 2em;
+		border-radius: 0.5em;
+		input[type=text] {
+			font-size: 0.875em;
+			padding: 0.75em 0.5em;
+			margin-bottom: 0.25em;
+		}
+		.top_label {
+			.gfield_label {
+				margin-bottom: 0;
+			}
+			.ginput_container {
+				input {
+					width: 100%;
+				}
+			}
+		}
+		.ginput_complex {
+			label {
+				display: none;
+			}
+		}
+		li.gfield {
+			padding-bottom: 0.5em;
+			.ginput_container {
+				margin-top: 0.25em;
+			}
+		}
+	}
+	.gform_button {
+		@include button($purple, #fff);
+		border: 1px solid $purple;
+		display: block !important;
+		margin: 0 auto;
+		width: 12em;
+		padding: 0.75em;
+		&:hover {
+			background-color: darken($purple,10%);
+			color: white;
+			border-color: darken($purple,10%);
+		}
+	}
+	.icon-close {
+		position: absolute;
+		top: 0.5em;
+		right: 0.5em;
+		font-size: 1.5em;
+		color: $dark-gray;
+		cursor: pointer;
+	}
+}
