@@ -48,7 +48,8 @@
 	<div class="register-form">
 		<div class="form-wrapper">
 			<span class="register-trigger"> <?php include('svg/icon-close.php'); ?> </span>
-			<?php gravity_form( 3, false, false, false, '', false ); ?>
+			<?php $register = get_field('register_form'); ?>
+			<?php gravity_form( $register, false, false, false, '', false ); ?>
 		</div>
 	</div>
 	<?php do_action( 'before' ); ?>
@@ -74,8 +75,72 @@
 			</nav>
 		</div>
 		<div class="fam-tagline">
-			<h1><?php the_field('banner_header_text'); ?></h1>
-			<h4><?php the_field('banner_sub_header'); ?></h4>
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				</ol> -->
+
+				<div class="carousel-inner">
+					<?php $z = 0; ?>
+					<?php if( have_rows('banner_tagline') ): ?>
+
+						<?php while( have_rows('banner_tagline') ): the_row(); 
+
+							// vars
+							$banner_header = get_sub_field('banner_header');
+							$banner_subheader = get_sub_field('banner_sub_header');
+
+							?>
+							<div class="item <?php if ($z==0) { echo 'active';} ?>">
+								<div class="carousel-caption">
+									<h1><?php echo $banner_header; ?></h1>
+									<h4><?php echo $banner_subheader; ?></h4>
+								</div>
+							</div>
+							
+						<?php $z++; ?>
+
+						<?php endwhile; ?>
+
+					<?php endif; ?>
+	
+				</div>
+
+				<!-- Wrapper for slides
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="carousel-caption">
+							<h1><?php // the_field('banner_header_text'); ?></h1>
+							<h4><?php // the_field('banner_sub_header'); ?></h4>
+						</div>
+					</div>
+			    	<div class="item">
+			      	<div class="carousel-caption">
+			         	<h1><?php // the_field('banner_header_text'); ?></h1>
+							<h4><?php // the_field('banner_sub_header'); ?></h4>
+			      	</div>
+			    	</div>
+			    	<div class="item">
+			      	<div class="carousel-caption">
+			         	<h1><?php // the_field('banner_header_text'); ?></h1>
+							<h4><?php // the_field('banner_sub_header'); ?></h4>
+			      	</div>
+			    	</div>
+			  	</div> -->
+			 
+				<!-- Controls
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a> -->
+			</div> <!-- Carousel -->
+			<!-- <h1><?php // the_field('banner_header_text'); ?></h1>
+			<h4><?php // the_field('banner_sub_header'); ?></h4> -->
 			<span class="btn clear-btn register-trigger"><?php the_field('left_button_text'); ?></span>
 			<a href="#" class="btn white-btn learn-more"><?php the_field('right_button_text'); ?></a>
 		</div>

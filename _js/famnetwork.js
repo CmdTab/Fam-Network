@@ -1,11 +1,11 @@
-function navToggle() {
+function navToggle () {
 	jQuery('#toggle-nav').click(function() {
 		jQuery('#famnetwork-nav').slideToggle();
 		return false;
 	});
 }
 
-function stickyNav() {
+function stickyNav () {
 	jQuery('.site').waypoint(function(direction) {
 	   if (direction == 'down') {
 	   	jQuery('.site-header').addClass('sticky-nav');
@@ -15,14 +15,14 @@ function stickyNav() {
 	}, { offset: -100 });
 }
 
-function resourceTabs() {
+function resourceTabs () {
 	jQuery('.nav-tabs a').click(function (e) {
 		e.preventDefault()
 		jQuery(this).tab('show')
 	});
 }
 
-function turnCard() {
+function turnCard () {
 	jQuery('.turn-btn').click(function() {
 		if(jQuery( this ).parent( '.front , .back' ).parent( '.flipper' ).parent( '.flip-container' ).hasClass( 'hover' )) {
 			jQuery( this ).parent( '.front , .back' ).parent( '.flipper' ).parent( '.flip-container' ).removeClass( 'hover');
@@ -41,7 +41,7 @@ function turnCard() {
 	});
 }
 
-function registerForm() {
+function registerForm () {
 	jQuery( '.register-trigger' ).click(function() {
 		if (jQuery('.register-form').hasClass('expanded')) {
 			jQuery( '.register-form' ).removeClass( 'expanded' );
@@ -53,7 +53,7 @@ function registerForm() {
 	});
 }
 
-function smoothScroll() {
+function smoothScroll () {
 	jQuery(".learn-more").click(function() {
 	    jQuery('html, body').animate({
 	        scrollTop: jQuery(".join-free").offset().top - 74
@@ -68,6 +68,12 @@ function smoothScroll() {
 	});
 }
 
+function textCarousel () {
+	jQuery('.carousel').carousel({
+		interval: 3000
+	});
+}
+
 jQuery(document).ready(function() {
 	var vw = jQuery(window).width();
 	if (vw > 800) {
@@ -79,6 +85,7 @@ jQuery(document).ready(function() {
 	resourceTabs();
 	registerForm();
 	turnCard();
+	textCarousel();
 	smoothScroll();
 	navToggle();
 });
