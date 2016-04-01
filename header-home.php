@@ -48,7 +48,9 @@
 	<div class="register-form">
 		<div class="form-wrapper">
 			<span class="register-trigger"> <?php include('svg/icon-close.php'); ?> </span>
+
 			<?php $register = get_field('register_form'); ?>
+
 			<?php gravity_form( $register, false, false, false, '', false ); ?>
 		</div>
 	</div>
@@ -65,13 +67,13 @@
 			<nav id="famnetwork-nav">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false) ); ?>
 				<?php global $woocommerce; ?>
-				<a class="fam-cart" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
-					<?php if($woocommerce->cart->cart_contents_count > 0): ?>
+				<!-- <a class="fam-cart" href="<?php // echo $woocommerce->cart->get_cart_url(); ?>" title="<?php // _e('View your shopping cart', 'woothemes'); ?>">
+					<?php // if($woocommerce->cart->cart_contents_count > 0): ?>
 					<span class="cart-count">
-						<?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+						<?php // echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
 					</span>
-					<?php endif; ?>
-				</a>
+					<?php // endif; ?>
+				</a> -->
 			</nav>
 		</div>
 		<div class="fam-tagline">
