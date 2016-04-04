@@ -56,6 +56,10 @@
 	</div>
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header fam-header" role="banner">
+        <video loop muted autoplay poster="https://s3-us-west-1.amazonaws.com/homewordvideo/FAM_Network-Mobile-Fallback.jpg" runat="server" class="header-video">
+	        <source src="https://s3-us-west-1.amazonaws.com/homewordvideo/Tinted_video.webm" type="video/webm">
+	        <source src="https://s3-us-west-1.amazonaws.com/homewordvideo/Tinted_video.mp4" type="video/mp4">
+	    </video>
 		<div class="famnetwork-nav-container group">
 			<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<img src ="<?php bloginfo('template_directory'); ?>/_i/fam-network-logo.png">
@@ -89,7 +93,7 @@
 					<?php $z = 0; ?>
 					<?php if( have_rows('banner_tagline') ): ?>
 
-						<?php while( have_rows('banner_tagline') ): the_row(); 
+						<?php while( have_rows('banner_tagline') ): the_row();
 
 							// vars
 							$banner_header = get_sub_field('banner_header');
@@ -102,13 +106,13 @@
 									<h4><?php echo $banner_subheader; ?></h4>
 								</div>
 							</div>
-							
+
 						<?php $z++; ?>
 
 						<?php endwhile; ?>
 
 					<?php endif; ?>
-	
+
 				</div>
 
 				<!-- Wrapper for slides
@@ -132,7 +136,7 @@
 			      	</div>
 			    	</div>
 			  	</div> -->
-			 
+
 				<!-- Controls
 				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left"></span>

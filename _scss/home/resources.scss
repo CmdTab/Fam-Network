@@ -86,7 +86,7 @@
 				height: 2.5em;
 				border-radius: 50%;
 				background-color: darken($teal,5%);
-				z-index: 10;
+				z-index: 100;
 				@include bp(50) {
 					right: -1em;
 					top: 30%;

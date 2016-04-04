@@ -16,7 +16,7 @@
 					<a href="#">Footer Link #3</a>
 				</li>
 				<li>
-					<?php gravity_form( 2, false, false, false, '', false ); ?>
+					<?php gravity_form( 1, false, false, false, '', false ); ?>
 				</li>
 				<li>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo">
