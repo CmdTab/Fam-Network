@@ -8,7 +8,7 @@
  */
 ?>
 	</div>
-		<footer class="intent-footer" role="contentinfo">
+		<footer id="footer" class="intent-footer" role="contentinfo">
 			<ul class="three-list group">
 				<li>
 					<?php wp_nav_menu( array( 'menu' => 'footer links', 'container' => false, ) ); ?>

@@ -54,7 +54,7 @@
 		top: 1em;
 		z-index: 1;
 	}
-	.three-list {
+	.upgrade-details {
 		padding: 4em 0 0;
 		max-width: 80em;
 		width: 90%;
@@ -82,17 +82,11 @@
 				font-size: 1.25em;
 			}
 		}
-		li {
-			&:nth-of-type(3n) {
-				margin-bottom: 2.5em;
-			}
-			@include bp(44){
-				&:nth-child(2n),
-				&:nth-child(3n) {
-					text-align: right;
-					font-size: 1.25em;
-					padding-top: 2.5%;
-				}
+		.two-list {
+			@include bp(44) {
+				text-align: right;
+				font-size: 1.25em;
+				padding-top: 2.5%;
 			}
 		}
 		.clear-btn,
@@ -278,5 +272,39 @@
 		width: 3em;
 		background-color: $dark-gray;
 		margin: 0 auto;
+	}
+}
+.resource-discounts {
+	position: relative;
+}
+.resource-arrow {
+	position: absolute;
+	bottom: -6em;
+	left: 50%;
+	margin-left: -1.25em;
+	display: block;
+	width: 2.5em;
+	height: 2.5em;
+	background: $orange;
+	border-radius: 50%;
+	&:before {
+		content: '';
+		display: block;
+		height: 4.5em;
+		width: 0.25em;
+		background: $orange;
+		position: absolute;
+		top: -3.5em;
+		left: 50%;
+		margin-left: -0.125em;
+	}
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 0.25em;
+		height: 0.25em;
+
 	}
 }

@@ -8,7 +8,7 @@
  */
 ?>
 	</div>
-		<footer class="intent-footer" role="contentinfo">
+		<footer id="footer" class="intent-footer" role="contentinfo">
 			<ul class="three-list group">
 				<li>
 					<a href="#">Footer Link #1</a>

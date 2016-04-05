@@ -15,7 +15,7 @@
 	display: none;
 	@include bp(50) {
 		float: left;
-		width: 30%;
+		width: 25%;
 		height: 26em;
 		display: block;
 	}
@@ -37,6 +37,10 @@
 			border-radius: 4px 4px 0 0;
 			outline: none;
 			text-decoration: none;
+			text-transform: uppercase;
+			h3 {
+				font-weight: 400;
+			}
 		}
 		&.active {
 			display: block;
@@ -74,7 +78,6 @@
 	}
 	.active {
 		a {
-			color: $dark-gray;
 			&:after {
 				content: '';
 				position: absolute;
@@ -105,7 +108,7 @@
 		/*background: url(_i/view-resources-bg.jpg) center center no-repeat;
 		background-size: cover;*/
 		float: left;
-		width: 70%;
+		width: 75%;
 		height: 26em;
 		padding: 0;
 	}
@@ -310,4 +313,8 @@
 			}
 		}
 	}
+}
+.tab-content {
+	text-align: left;
+	color: #fff;
 }

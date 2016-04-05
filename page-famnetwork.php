@@ -18,14 +18,35 @@ get_header('home'); ?>
 				<li class="group">
 					<h3><?php the_field('step_1_header'); ?></h3>
 					<p><?php the_field('step_1_description'); ?></p>
-					<span class="purple-btn btn register-trigger"><?php the_field('step_1_button_left'); ?></span>
-					<span class="clear-btn btn register-trigger"><?php the_field('step_1_button_right'); ?></span>
+					<a href ="#free" class="purple-btn btn"><?php the_field('step_1_button_left'); ?></a>
+					<a href ="#premium" class="clear-btn btn"><?php the_field('step_1_button_right'); ?></a>
 				</li>
 				<li class="group">
 					<h3><?php the_field('step_2_header'); ?></h3>
 					<p><?php the_field('step_2_description'); ?></p>
-
-					<?php include('svg/icon-newsletter.php'); ?>
+					<div class="access-icons">
+						<a href = "#">
+							<span>Training</span>
+							<?php include('svg/icon-light.php'); ?>
+							<div class="access-popup">
+								<?php the_field('popup_1_text'); ?>
+							</div>
+						</a>
+						<a href = "#">
+							<span>Support</span>
+							<?php include('svg/icon-plus-o.php'); ?>
+							<div class="access-popup">
+								<?php the_field('popup_2_text'); ?>
+							</div>
+						</a>
+						<a href = "#" class="icon-flower">
+							<span>Resources</span>
+							<?php include('svg/icon-flower.php'); ?>
+							<div class="access-popup">
+								<?php the_field('popup_3_text'); ?>
+							</div>
+						</a>
+					</div>
 
 				</li>
 				<li class="group">
@@ -36,7 +57,7 @@ get_header('home'); ?>
 			</ul>
 			<img src="<?php bloginfo('template_directory'); ?>/_i/connected-purple.png" class="upgrade-icon" />
 		</div>
-		<div class="join-free group">
+		<div class="join-free group" id="free">
 			<div class="half full-box group" style="background: url(<?php the_field('left_section_background'); ?>) center center no-repeat; background-size: cover;">
 				<div class="full-box-bg">
 					<h1><?php the_field('left_section_header'); ?></h1>
@@ -47,7 +68,7 @@ get_header('home'); ?>
 
 						<ul>
 
-						<?php while( have_rows('left_section_list') ): the_row(); 
+						<?php while( have_rows('left_section_list') ): the_row();
 
 							// vars
 							$list_item = get_sub_field('list_item');
@@ -66,7 +87,7 @@ get_header('home'); ?>
 					<?php endif; ?>
 
 					<span class="orange-btn btn register-trigger"><?php the_field('left_section_button_left'); ?></span>
-					<span class="clear-btn btn register-trigger"><?php the_field('left_section_button_right'); ?></span>
+					<a href = "#premium" class="clear-btn btn"><?php the_field('left_section_button_right'); ?></a>
 				</div>
 			</div>
 			<div class="half side-box group" style="background: url(<?php the_field('right_section_background'); ?>) center center no-repeat; background-size: cover;">
@@ -238,48 +259,32 @@ get_header('home'); ?>
 				</li>
 			</ul>
 		</div>
-		<div class="upgrade-premium group">
+		<div class="upgrade-premium group" id="premium">
 			<div class="upgrade-top">
 				<img src="<?php bloginfo('template_directory'); ?>/_i/upgrade-icon.png" class="upgrade-icon" />
-				<ul class="three-list group">
-					<li>
-						<h1>Upgrade to Premium</h1>
+				<div class="upgrade-details group">
+					<div class="third first">
+						<h1><?php the_field('premium_header'); ?></h1>
 						<hr />
-						<h4>Secondary Heading</h4>
-						<span class="orange-btn btn top register-trigger">Upgrade Now ($8.99/month)</span>
-						<span class="clear-btn btn top register-trigger">Join for Free</span>
-					</li>
-					<li>
-						<p>
-							<?php include('svg/icon-check.php'); ?>
-							Lorem Ipsum dolor sit amet
-						</p>
-						<p>
-							<?php include('svg/icon-check.php'); ?>
-							Lorem Ipsum dolor sit amet
-						</p>
-						<p>
-							<?php include('svg/icon-check.php'); ?>
-							Lorem Ipsum dolor sit amet
-						</p>
-					</li>
-					<li>
-						<p>
-							<?php include('svg/icon-check.php'); ?>
-							Lorem Ipsum dolor sit amet
-						</p>
-						<p>
-							<?php include('svg/icon-check.php'); ?>
-							Lorem Ipsum dolor sit amet
-						</p>
-						<p>
-							<?php include('svg/icon-check.php'); ?>
-							Lorem Ipsum dolor sit amet
-						</p>
-					</li>
-				</ul>
-				<a href="#" class="orange-btn btn bottom">Upgrade Now ($8.99/month)</a>
-				<a href="#" class="clear-btn btn bottom">Join for Free</a>
+						<h4><?php the_field('prem_sub_heading'); ?></h4>
+						<span class="orange-btn btn top register-trigger"><?php the_field('prem_purchase_btn'); ?></span>
+						<a href = "#free" class="clear-btn btn top"><?php the_field('free_section_btn'); ?></a>
+					</div>
+					<div class="two-third">
+						<?php if( have_rows('premium_list') ): ?>
+						<ul class="two-list group">
+							<?php while ( have_rows('premium_list') ) : the_row(); ?>
+							<li>
+								<?php include('svg/icon-check.php'); ?>
+								<?php the_sub_field('premium_benefit'); ?>
+							</li>
+							<?php endwhile; ?>
+						</ul>
+						<?php endif; ?>
+					</div>
+				</div>
+				<a href="#" class="orange-btn btn bottom register-trigger"><?php the_field('prem_purchase_btn'); ?></a>
+				<a href="#free" class="clear-btn btn bottom"><?php the_field('free_section_btn'); ?></a>
 			</div>
 			<div class="upgrade-bottom">
 				<!-- <img src="<?php // bloginfo('template_directory'); ?>/_i/premium-bg.jpg" /> -->
@@ -291,7 +296,7 @@ get_header('home'); ?>
 									<a href="#" class="turn-btn">
 										<svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
 									</a>
-									<h2>Monthly Downloads</h2>
+									<h2><?php the_field('prem_box_1_title'); ?></h2>
 									<hr />
 									<?php	include('svg/icon-cloud.php'); ?>
 								</div>
@@ -300,13 +305,13 @@ get_header('home'); ?>
 										<svg class="icon icon-minus"><use xlink:href="#icon-minus"></use></svg>
 									</a>
 									<div class="boxed-info">
-										<h3>Healthy Leaders</h3>
+										<h3><?php the_field('prem_box_1_title'); ?></h3>
 										<hr />
-										<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+										<p><?php the_field('prem_box_1_text'); ?></p>
 									</div>
 								</div>
 							</div>
-						</div>	
+						</div>
 					</li>
 					<li class="online-training">
 						<div class="info-card flip-container">
@@ -315,7 +320,7 @@ get_header('home'); ?>
 									<a href="#" class="turn-btn">
 										<svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
 									</a>
-									<h2>Online Training</h2>
+									<h2><?php the_field('prem_box_2_title'); ?></h2>
 									<hr />
 									<?php	include('svg/icon-lightbulb.php'); ?>
 								</div>
@@ -324,22 +329,23 @@ get_header('home'); ?>
 										<svg class="icon icon-minus"><use xlink:href="#icon-minus"></use></svg>
 									</a>
 									<div class="boxed-info">
-										<h3>Online Training</h3>
+										<h3><?php the_field('prem_box_2_title'); ?></h3>
 										<hr />
-										<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+										<p><?php the_field('prem_box_2_text'); ?></p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
 					<li class="resource-discounts">
+
 						<div class="info-card flip-container">
 							<div class="flipper">
 								<div class="front">
 									<a href="#" class="turn-btn">
 										<svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
 									</a>
-									<h2>Resource Discounts</h2>
+									<h2><?php the_field('prem_box_3_title'); ?></h2>
 									<hr />
 									<?php	include('svg/icon-discount.php'); ?>
 								</div>
@@ -348,12 +354,15 @@ get_header('home'); ?>
 										<svg class="icon icon-minus"><use xlink:href="#icon-minus"></use></svg>
 									</a>
 									<div class="boxed-info">
-										<h3>Resource Discounts</h3>
+										<h3><?php the_field('prem_box_3_title'); ?></h3>
 										<hr />
-										<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+										<p><?php the_field('prem_box_3_text'); ?></p>
 									</div>
 								</div>
 							</div>
+						</div>
+						<div class="resource-arrow">
+							<?php include('svg/icon-arrow.php'); ?>
 						</div>
 					</li>
 					<li class="premarital-app">
@@ -363,7 +372,7 @@ get_header('home'); ?>
 									<a href="#" class="turn-btn">
 										<svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
 									</a>
-									<h2>Premarital App</h2>
+									<h2><?php the_field('prem_box_4_title'); ?></h2>
 									<hr />
 									<?php	include('svg/icon-app.php'); ?>
 								</div>
@@ -372,9 +381,9 @@ get_header('home'); ?>
 										<svg class="icon icon-minus"><use xlink:href="#icon-minus"></use></svg>
 									</a>
 									<div class="boxed-info">
-										<h3>Resource Discounts</h3>
+										<h3><?php the_field('prem_box_4_title'); ?></h3>
 										<hr />
-										<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+										<p><?php the_field('prem_box_4_text'); ?></p>
 									</div>
 								</div>
 							</div>
@@ -384,13 +393,13 @@ get_header('home'); ?>
 				</ul>
 			</div>
 			<div class="exclusive-pricing">
-				<h1>Premium Member's Exclusive Pricing</h1>
-				<h4>browse our extensive library of discounted family ministry resources</h4>
+				<h1><?php the_field('resources_header'); ?></h1>
+				<h4><?php the_field('resources_sub_header'); ?></h4>
 				<hr />
 			</div>
 		</div>
 		<div class="resources group">
-			
+
 		  	<!-- Nav tabs -->
 			<ul class="nav nav-tabs group" role="tablist">
 				<li role="presentation" class="active">
@@ -402,19 +411,19 @@ get_header('home'); ?>
 				<li role="presentation">
 					<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
 						<?php include('svg/icon-kids.php'); ?>
-						<h3>Empowered Kids</h3>
+						<h3><?php the_field('second_tab_header'); ?></h3>
 					</a>
 				</li>
 				<li role="presentation">
 					<a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
 						<?php include('svg/icon-confident.php'); ?>
-						<h3>Confident Parents</h3>
+						<h3><?php the_field('third_tab_header'); ?></h3>
 					</a>
 				</li>
 				<li role="presentation">
 					<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
 						<?php include('svg/icon-leaders.php'); ?>
-						<h3>Healthy Leaders</h3>
+						<h3><?php the_field('fourth_tab_header'); ?></h3>
 					</a>
 				</li>
 			</ul>
@@ -429,31 +438,11 @@ get_header('home'); ?>
 						</a>
 					</div>
 					<div class="resource-sixty group">
-
-						<?php if( have_rows('first_tab_list') ): ?>
-
-							<ul class="half">
-
-							<?php while( have_rows('first_tab_list') ): the_row(); 
-
-								// vars
-								$list_item = get_sub_field('list_item');
-
-								?>
-
-								<li>
-									<?php	include('svg/icon-check.php'); ?>
-									<?php echo $list_item; ?>
-								</li>
-
-							<?php endwhile; ?>
-
-							</ul>
-
-						<?php endif; ?>
-
+						<div class="tab-content half first">
+							<?php the_field('first_tab_content'); ?>
+						</div>
 						<div class="half">
-							<a href="#" class="white-btn btn"><?php the_field('first_tab_button'); ?></a>
+							<a href="<?php the_field('first_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('first_tab_button'); ?></a>
 						</div>
 					</div>
 				</div>
@@ -465,31 +454,11 @@ get_header('home'); ?>
 						</a>
 					</div>
 					<div class="resource-sixty group">
-
-						<?php if( have_rows('second_tab_list') ): ?>
-
-							<ul class="half">
-
-							<?php while( have_rows('second_tab_list') ): the_row(); 
-
-								// vars
-								$list_item = get_sub_field('list_item');
-
-								?>
-
-								<li>
-									<?php	include('svg/icon-check.php'); ?>
-									<?php echo $list_item; ?>
-								</li>
-
-							<?php endwhile; ?>
-
-							</ul>
-
-						<?php endif; ?>
-
+						<div class="tab-content half first">
+							<?php the_field('second_tab_content'); ?>
+						</div>
 						<div class="half">
-							<a href="#" class="white-btn btn"><?php the_field('second_tab_button'); ?></a>
+							<a href="<?php the_field('second_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('second_tab_button'); ?></a>
 						</div>
 					</div>
 				</div>
@@ -501,31 +470,11 @@ get_header('home'); ?>
 						</a>
 					</div>
 					<div class="resource-sixty group">
-						
-						<?php if( have_rows('third_tab_list') ): ?>
-
-							<ul class="half">
-
-							<?php while( have_rows('third_tab_list') ): the_row(); 
-
-								// vars
-								$list_item = get_sub_field('list_item');
-
-								?>
-
-								<li>
-									<?php	include('svg/icon-check.php'); ?>
-									<?php echo $list_item; ?>
-								</li>
-
-							<?php endwhile; ?>
-
-							</ul>
-
-						<?php endif; ?>
-
+						<div class="tab-content half first">
+							<?php the_field('third_tab_content'); ?>
+						</div>
 						<div class="half">
-							<a href="#" class="white-btn btn"><?php the_field('third_tab_button'); ?></a>
+							<a href="<?php the_field('third_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('third_tab_button'); ?></a>
 						</div>
 					</div>
 				</div>
@@ -538,31 +487,11 @@ get_header('home'); ?>
 							</a>
 						</div>
 						<div class="resource-sixty group">
-							
-							<?php if( have_rows('fourth_tab_list') ): ?>
-
-								<ul class="half">
-
-								<?php while( have_rows('fourth_tab_list') ): the_row(); 
-
-									// vars
-									$list_item = get_sub_field('list_item');
-
-									?>
-
-									<li>
-										<?php	include('svg/icon-check.php'); ?>
-										<?php echo $list_item; ?>
-									</li>
-
-								<?php endwhile; ?>
-
-								</ul>
-
-							<?php endif; ?>
-
+							<div class="tab-content half first">
+								<?php the_field('fourth_tab_content'); ?>
+							</div>
 							<div class="half">
-								<a href="#" class="white-btn btn"><?php the_field('fourth_tab_button'); ?></a>
+								<a href="<?php the_field('fourth_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('fourth_tab_button'); ?></a>
 							</div>
 						</div>
 					</div>

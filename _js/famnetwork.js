@@ -50,6 +50,7 @@ function registerForm () {
 			jQuery( '.register-form' ).addClass( 'expanded' );
 			jQuery( '.register-form' ).css( 'display' , 'block' );
 		}
+		return false;
 	});
 }
 
@@ -74,13 +75,38 @@ function textCarousel () {
 	});
 }
 
+function accessPopup() {
+	jQuery('.access-icons a').click(function() {
+		if(jQuery(this).children('.access-popup').is(':hidden')) {
+			jQuery('.access-popup').css('display', 'none');
+			jQuery(this).children('.access-popup').css('display', 'block');
+		} else {
+			jQuery('.access-popup').css('display', 'none');
+		}
+		return false;
+	});
+}
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
 jQuery(document).ready(function() {
 	var vw = jQuery(window).width();
 	if (vw > 800) {
 		stickyNav();
 	}
 	if (vw < 800) {
-		
+
 	}
 	resourceTabs();
 	registerForm();
@@ -88,4 +114,5 @@ jQuery(document).ready(function() {
 	textCarousel();
 	smoothScroll();
 	navToggle();
+	accessPopup();
 });

@@ -114,9 +114,20 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 18283,
+		"initialSize": 22226,
 		"inputAbbreviatedPath": "\/_i\/fam-network-logo.png",
 		"outputAbbreviatedPath": "\/_i\/fam-network-logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_i\/fam-network_logo.old.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18283,
+		"inputAbbreviatedPath": "\/_i\/fam-network_logo.old.png",
+		"outputAbbreviatedPath": "\/_i\/fam-network_logo.old.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -136,7 +147,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 18283,
+		"initialSize": 571,
 		"inputAbbreviatedPath": "\/_i\/favicon.png",
 		"outputAbbreviatedPath": "\/_i\/favicon.png",
 		"outputPathIsOutsideProject": 0,
@@ -387,7 +398,7 @@
 		},
 	"\/_js\/bootstrap-carousel.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_js\/bootstrap-carousel.js",
 		"outputAbbreviatedPath": "\/_js\/min\/bootstrap-carousel-min.js",
@@ -427,7 +438,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_js\/html5shiv.js": {
 		"fileType": 64,
@@ -992,6 +1003,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/svg\/icon-arrow.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/svg\/icon-arrow.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/svg\/icon-check.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1037,6 +1057,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/svg\/icon-flower.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/svg\/icon-flower.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/svg\/icon-forum.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1060,6 +1089,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/svg\/icon-leaders.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/svg\/icon-light.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/svg\/icon-light.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1096,6 +1134,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/svg\/icon-newsletter.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/svg\/icon-plus-o.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/svg\/icon-plus-o.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1233,6 +1280,12 @@
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/_js\/jquery.waypoints.js",
 			"position": 1,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_js\/bootstrap-carousel.js",
+			"position": 2,
 			"type": 0
 			}
 		]
