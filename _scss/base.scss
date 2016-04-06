@@ -93,6 +93,9 @@ h4 {
 	}
 }
 
+.content-area {
+	padding: 4em 0;
+}
 
 .icon {
 	display: inline-block;
@@ -120,3 +123,7 @@ Example showing how to change the color/size of the icons:
 @import "home/we-believe";
 @import "home/upgrade-premium";
 @import "footer";
+@import "forms";
+@import "products";
+@import "membership";
+@import "sidebar";

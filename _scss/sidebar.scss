@@ -1,0 +1,147 @@
+.page-sidebar {
+	padding: 0;
+	background: white;
+	background: linear-gradient(to right, $purple, $purple 25%, white 25%, white 100% );
+	.site {
+		box-shadow: none;
+	}
+	.dashboard-sidebar {
+		display: none;
+		background-color: $purple;
+		@include bp(44) {
+			display: block;
+			width: 25%;
+			float: left;
+		}
+		.site-logo {
+			float: none;
+			margin: 0 auto;
+			padding: 2em 0;
+			max-width: 10em;
+		}
+		.dashboard-shop,
+		.current-month {
+			display: block;
+			margin-bottom: 1em;
+			width: 100%;
+			padding: 0.75em;
+			font-size: 1.5em;
+			background: lighten($teal,10%);
+			text-align: center;
+			color: white;
+			text-transform: uppercase;
+			font-family: 'Oswald', sans-serif;
+			transition: all 250ms ease-in-out;
+			&:hover {
+				text-decoration: none;
+				background-color: $teal;
+			}
+		}
+		.current-month {
+			background: lighten($purple, 15%);
+			position: relative;
+			padding: 0.35em;
+			&:hover {
+				text-decoration: none;
+				background-color: lighten($purple, 10%);
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0.8em;
+				right: -0.5em;
+				margin: 0 auto;
+				width: 1.5em;
+				height: 1.5em;
+				border-radius: 50%;
+				background-color: lighten($purple, 15%);
+				z-index: 100;
+			}
+			span {
+				display: block;
+				font-size: 0.65em;
+				text-transform: none;
+			}
+		}
+		.dashboard-history {
+			color: white;
+		}
+		.month-history {
+			padding: 0 2em 2em;
+			ul {
+				margin: 0 auto;
+				margin-left: 35%;
+				padding: 0;
+				list-style: none;
+				font-family: 'Oswald', sans-serif;
+			}
+			li {
+				position: relative;
+				&:after {
+					content: '';
+					width: 0.25em;
+					height: 0.25em;
+					background-color: white;
+					border-radius: 50%;
+					position: absolute;
+					top: 0.65em;
+					left: -0.875em;
+				}
+			}
+			.header {
+				font-size: 1.5em;
+				margin-left: -1.15em;
+				text-transform: uppercase;
+			}
+			.load-history {
+				margin: 1.5em auto 0;
+				display: block;
+				color: white;
+				text-align: center;
+				font-family: 'Oswald', sans-serif;
+			}
+		}
+		.feature-product {
+			background-color: lighten($purple,5%);
+			font-family: 'Oswald', sans-serif;
+			text-align: center;
+			width: 85%;
+			margin: 0 auto;
+			padding: 2em 1em;
+			p,
+			h4 {
+				margin: 0;
+				font-size: 1em;
+				font-family: 'Oswald', sans-serif;
+			}
+			h4 {
+				padding: 0.25em 0 0.5em;
+				font-style: normal;
+			}
+			img {
+				margin-bottom: 0.875em;
+			}
+		}
+	}
+	.dashboard-main {
+		background-color: white;
+		@include bp(44) {
+			width: 75%;
+			float: left;
+		}
+	}
+	.dashboard-header {
+		background: darken($purple,7.5%);
+		padding: 1em 0.5em;
+		.dashboard-nav {
+			float: right;
+		}
+		.dashboard-search {
+			float: left;
+		}
+	}
+	.dashboard-content,
+	.entry-content {
+		padding: 2em;
+	}
+}

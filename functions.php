@@ -128,3 +128,15 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/*// Separete Login form and registration form */
+add_action('woocommerce_before_customer_login_form','load_registration_form', 2);
+	function load_registration_form(){
+	if(isset($_GET['action'])=='register'){
+		woocommerce_get_template( 'myaccount/form-registration.php' );
+	}
+}
+
+// Display 12 products at a time
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );

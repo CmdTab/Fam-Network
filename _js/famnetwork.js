@@ -100,6 +100,12 @@ $(function() {
     }
   });
 });
+function matchProductheight () {
+	jQuery('.products li').matchHeight();
+	jQuery('.products li img').matchHeight();
+	jQuery('.products li h3').matchHeight();
+	jQuery('.products li .price').matchHeight();
+}
 jQuery(document).ready(function() {
 	var vw = jQuery(window).width();
 	if (vw > 800) {
@@ -115,4 +121,5 @@ jQuery(document).ready(function() {
 	smoothScroll();
 	navToggle();
 	accessPopup();
+	matchProductheight();
 });
