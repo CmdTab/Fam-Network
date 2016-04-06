@@ -20,7 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 wc_print_notices(); ?>
-
 <p class="myaccount_user">
 	<?php
 	printf(

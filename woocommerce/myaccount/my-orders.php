@@ -38,7 +38,7 @@ $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_q
 ) ) );
 
 if ( $customer_orders ) : ?>
-
+<div class="account-grid">
 	<h2><?php echo apply_filters( 'woocommerce_my_account_my_orders_title', __( 'Recent Orders', 'woocommerce' ) ); ?></h2>
 
 	<table class="shop_table shop_table_responsive my_account_orders">
@@ -114,4 +114,5 @@ if ( $customer_orders ) : ?>
 			<?php endforeach; ?>
 		</tbody>
 	</table>
+</div>
 <?php endif; ?>
