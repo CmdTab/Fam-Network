@@ -55,31 +55,32 @@
 		</div>
 	</div>
 	<?php do_action( 'before' ); ?>
+        <div class="famnetwork-nav-container group">
+            <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                <img src ="<?php bloginfo('template_directory'); ?>/_i/fam-network-logo.png">
+            </a>
+
+            <a href = "#" id="toggle-nav">
+                Menu
+            </a>
+            <nav id="famnetwork-nav">
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false) ); ?>
+                <?php global $woocommerce; ?>
+                <!-- <a class="fam-cart" href="<?php // echo $woocommerce->cart->get_cart_url(); ?>" title="<?php // _e('View your shopping cart', 'woothemes'); ?>">
+                    <?php // if($woocommerce->cart->cart_contents_count > 0): ?>
+                    <span class="cart-count">
+                        <?php // echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+                    </span>
+                    <?php // endif; ?>
+                </a> -->
+            </nav>
+        </div>
 	<header id="masthead" class="site-header fam-header" role="banner">
         <video loop muted autoplay poster="https://s3-us-west-1.amazonaws.com/homewordvideo/FAM_Network-Mobile-Fallback.jpg" runat="server" class="header-video">
 	        <source src="https://s3-us-west-1.amazonaws.com/homewordvideo/Tinted_video.webm" type="video/webm">
 	        <source src="https://s3-us-west-1.amazonaws.com/homewordvideo/Tinted_video.mp4" type="video/mp4">
 	    </video>
-		<div class="famnetwork-nav-container group">
-			<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src ="<?php bloginfo('template_directory'); ?>/_i/fam-network-logo.png">
-			</a>
 
-			<a href = "#" id="toggle-nav">
-				Menu
-			</a>
-			<nav id="famnetwork-nav">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false) ); ?>
-				<?php global $woocommerce; ?>
-				<!-- <a class="fam-cart" href="<?php // echo $woocommerce->cart->get_cart_url(); ?>" title="<?php // _e('View your shopping cart', 'woothemes'); ?>">
-					<?php // if($woocommerce->cart->cart_contents_count > 0): ?>
-					<span class="cart-count">
-						<?php // echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
-					</span>
-					<?php // endif; ?>
-				</a> -->
-			</nav>
-		</div>
 		<div class="fam-tagline">
 			<div id="carousel-example-generic" class="carousel slide fade" data-ride="carousel">
 				<!-- Indicators

@@ -478,7 +478,7 @@ get_header('home'); ?>
 						</div>
 					</div>
 				</div>
-				<div role="tabpanel" class="tab-pane group" id="settings" style="background: url(<?php the_field('third_tab_background_image'); ?>) center center no-repeat; background-size: cover;">
+				<div role="tabpanel" class="tab-pane group" id="settings" style="background: url(<?php the_field('fourth_tab_background_image'); ?>) center center no-repeat; background-size: cover;">
 					<div class="testing">
 						<div class="resource-forty">
 							<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">

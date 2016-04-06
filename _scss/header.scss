@@ -9,7 +9,12 @@
 }
 .famnetwork-nav-container {
 	padding: 1em 5%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	background: rgba(51,51,51,0.85);
+	z-index: 201;
 	a {
 		display: inline-block;
 		color: #fff;
@@ -29,13 +34,7 @@
 	padding: 1em 0;
 	overflow: hidden;
 	.famnetwork-nav-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		padding: 1em 5%;
-		background: rgba(51,51,51,0.85);
-		z-index: 201;
+
 	}
 }
 .site-logo {
