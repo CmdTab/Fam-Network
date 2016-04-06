@@ -193,16 +193,24 @@
 	display: none;
 	.form-wrapper {
 		background: white;
-		width: 40%;
-		height: 60%;
+		width: 90%;
+		height: 55%;
 		position: fixed;
 		margin: 0 auto;
 		top: 20%;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		padding: 2em;
+		padding: 1em 2em;
 		border-radius: 0.5em;
+		@include bp(44) {
+			width: 65%;
+			height: 60%;
+		}
+		@include bp(67.5) {
+			width: 40%;
+			padding: 2em;
+		}
 		input[type=text] {
 			font-size: 0.875em;
 			padding: 0.75em 0.5em;
@@ -225,9 +233,16 @@
 		}
 		li.gfield {
 			padding-bottom: 0.5em;
+			font-size: 0.875em;
+			@include bp(44) {
+				font-size: 1em;
+			}
 			.ginput_container {
 				margin-top: 0.25em;
 			}
+		}
+		.gform_footer {
+			margin-top: 0;
 		}
 	}
 	.gform_button {
