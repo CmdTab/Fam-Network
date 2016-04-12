@@ -54,24 +54,9 @@ function registerForm () {
 	});
 }
 
-function smoothScroll () {
-	jQuery(".learn-more").click(function() {
-	    jQuery('html, body').animate({
-	        scrollTop: jQuery(".join-free").offset().top - 74
-	    }, 2000);
-	    return false;
-	});
-	jQuery(".view-resources").click(function() {
-	    jQuery('html, body').animate({
-	        scrollTop: jQuery(".exclusive-pricing").offset().top - 74
-	    }, 2000);
-	    return false;
-	});
-}
-
 function textCarousel () {
 	jQuery('.carousel').carousel({
-		interval: 3000
+		interval: 5000
 	});
 }
 
@@ -87,7 +72,7 @@ function accessPopup() {
 	});
 }
 $(function() {
-	$('a[href*="#"]:not([href="#"]), a[href*="#"]:not(a[data-toggle="tab"])').click(function() {
+	$('a[href*="#"]:not([href="#"])').click(function() {
    	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -118,7 +103,6 @@ jQuery(document).ready(function() {
 	registerForm();
 	turnCard();
 	textCarousel();
-	smoothScroll();
 	navToggle();
 	accessPopup();
 	matchProductheight();

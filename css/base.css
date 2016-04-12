@@ -915,21 +915,23 @@ hr {
   .register-form .form-wrapper {
     background: white;
     width: 90%;
-    height: 60%;
+    height: 55%;
     position: fixed;
     margin: 0 auto;
     top: 20%;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 2em;
+    padding: 1em 2em;
     border-radius: 0.5em; }
     @media (min-width: 44em) {
       .register-form .form-wrapper {
-        width: 65%; } }
+        width: 65%;
+        height: 60%; } }
     @media (min-width: 67.5em) {
       .register-form .form-wrapper {
-        width: 40%; } }
+        width: 40%;
+        padding: 2em; } }
     .register-form .form-wrapper input[type=text] {
       font-size: 0.875em;
       padding: 0.75em 0.5em;
@@ -941,9 +943,15 @@ hr {
     .register-form .form-wrapper .ginput_complex label {
       display: none; }
     .register-form .form-wrapper li.gfield {
-      padding-bottom: 0.5em; }
+      padding-bottom: 0.5em;
+      font-size: 0.875em; }
+      @media (min-width: 44em) {
+        .register-form .form-wrapper li.gfield {
+          font-size: 1em; } }
       .register-form .form-wrapper li.gfield .ginput_container {
         margin-top: 0.25em; }
+    .register-form .form-wrapper .gform_footer {
+      margin-top: 0; }
   .register-form .gform_button {
     display: inline-block;
     padding: 0.5em 1.25em;
@@ -1384,22 +1392,22 @@ hr {
 
   .carousel-indicators {
     bottom: 20px; } }
-.fade .carousel-inner .item {
-  transition-property: opacity; }
-.fade .carousel-inner .item,
-.fade .carousel-inner .active.left,
-.fade .carousel-inner .active.right {
-  opacity: 0; }
-.fade .carousel-inner .active,
-.fade .carousel-inner .next.left,
-.fade .carousel-inner .prev.right {
-  opacity: 1; }
-.fade .carousel-inner .next,
-.fade .carousel-inner .prev,
-.fade .carousel-inner .active.left,
-.fade .carousel-inner .active.right {
+.carousel.fade .item {
+  -webkit-transition: opacity 3s;
+  -moz-transition: opacity 3s;
+  -ms-transition: opacity 3s;
+  -o-transition: opacity 3s;
+  transition: opacity 3s; }
+
+.carousel.fade .active.left {
   left: 0;
-  transform: translate3d(0, 0, 0); }
+  opacity: 0;
+  z-index: 2; }
+
+.carousel.fade .next {
+  left: 0;
+  opacity: 1;
+  z-index: 1; }
 
 .resources {
   overflow: hidden; }
@@ -2237,7 +2245,7 @@ hr {
         font-size: 1.25em; } }
   @media (min-width: 44em) {
     .upgrade-premium .upgrade-details .two-list {
-      text-align: right;
+      text-align: left;
       font-size: 1.25em;
       padding-top: 2.5%; } }
   .upgrade-premium .upgrade-details .clear-btn:hover,

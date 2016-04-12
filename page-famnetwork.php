@@ -52,7 +52,7 @@ get_header('home'); ?>
 				<li class="group">
 					<h3><?php the_field('step_3_header'); ?></h3>
 					<p><?php the_field('step_3_description'); ?></p>
-					<span class="purple-btn btn view-resources"><?php the_field('step_3_button_text'); ?></span>
+					<a href = "#resources" class="purple-btn btn view-resources"><?php the_field('step_3_button_text'); ?></a>
 				</li>
 			</ul>
 			<img src="<?php bloginfo('template_directory'); ?>/_i/connected-purple.png" class="upgrade-icon" />
@@ -190,7 +190,7 @@ get_header('home'); ?>
 									<a href="#" class="turn-btn">
 										<svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
 									</a>
-									<h3><?php the_field('first_box_header'); ?></h3>
+									<h3><?php the_field('second_box_header'); ?></h3>
 									<hr>
 								</div>
 							</div>
@@ -398,7 +398,7 @@ get_header('home'); ?>
 				<hr />
 			</div>
 		</div>
-		<div class="resources group">
+		<div class="resources group" id="resources">
 
 		  	<!-- Nav tabs -->
 			<ul class="nav nav-tabs group" role="tablist">
@@ -479,20 +479,18 @@ get_header('home'); ?>
 					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane group" id="settings" style="background: url(<?php the_field('fourth_tab_background_image'); ?>) center center no-repeat; background-size: cover;">
-					<div class="testing">
-						<div class="resource-forty">
-							<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
-								<?php include('svg/icon-leaders.php'); ?>
-								<h3><?php the_field('fourth_tab_header'); ?></h3>
-							</a>
+					<div class="resource-forty">
+						<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+							<?php include('svg/icon-leaders.php'); ?>
+							<h3><?php the_field('fourth_tab_header'); ?></h3>
+						</a>
+					</div>
+					<div class="resource-sixty group">
+						<div class="tab-content half first">
+							<?php the_field('fourth_tab_content'); ?>
 						</div>
-						<div class="resource-sixty group">
-							<div class="tab-content half first">
-								<?php the_field('fourth_tab_content'); ?>
-							</div>
-							<div class="half">
-								<a href="<?php the_field('fourth_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('fourth_tab_button'); ?></a>
-							</div>
+						<div class="half">
+							<a href="<?php the_field('fourth_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('fourth_tab_button'); ?></a>
 						</div>
 					</div>
 				</div>

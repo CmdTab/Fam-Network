@@ -18,7 +18,7 @@
 					<?php gravity_form( $contact, false, false, false, '', false ); ?>
 				</li>
 				<li>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo">
+					<a href="https://homeword.com" class="footer-logo">
 						<img src = "<?php bloginfo('template_directory'); ?>/_i/homeword-logo-white.png">
 					</a>
 				</li>

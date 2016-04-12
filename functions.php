@@ -70,6 +70,94 @@ function start_setup() {
 endif; // start_setup
 add_action( 'after_setup_theme', 'start_setup' );
 
+/***Custom Taxonomies***/
+function create_tax() {
+	register_taxonomy(
+		'months',
+		array('post', 'podcast', 'culture', 'webinar'),
+		array(
+			'label' => __( 'Months' ),
+			'hierarchical' => false,
+		)
+	);
+}
+add_action( 'init', 'create_tax' );
+/***Custom Post Types***/
+function create_post_type() {
+	$args = array(
+		'label'  => 'Podcasts',
+		'labels' => array(
+			'singular_name' => 'Podcast'
+			),
+		'description' => 'Monthly podcasts',
+		'public' => true,
+		'has_archive' => true,
+		'show_in_menu' => true,
+		'show_ui' => true,
+		'menu_position' => 5,
+		'taxonomies' => array('category', 'months'),
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+	);
+	register_post_type( 'podcast', $args );
+	$args = array(
+		'label'  => 'Webinars',
+		'labels' => array(
+			'singular_name' => 'Webinar'
+			),
+		'public' => true,
+		'has_archive' => true,
+		'show_in_menu' => true,
+		'show_ui' => true,
+		'menu_position' => 5,
+		'taxonomies' => array('category', 'months'),
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+	);
+	register_post_type( 'webinars', $args );
+	$args = array(
+		'label'  => 'Culture Updates',
+		'labels' => array(
+			'singular_name' => 'Update'
+			),
+		'public' => true,
+		'has_archive' => true,
+		'show_in_menu' => true,
+		'show_ui' => true,
+		'menu_position' => 5,
+		'taxonomies' => array('category', 'months'),
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+	);
+	register_post_type( 'culture', $args );
+	$args = array(
+		'label'  => 'Good Advice',
+		'labels' => array(
+			'singular_name' => 'Newsletter'
+			),
+		'public' => true,
+		'has_archive' => true,
+		'show_in_menu' => true,
+		'show_ui' => true,
+		'menu_position' => 5,
+		'taxonomies' => array('category', 'months'),
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+	);
+	register_post_type( 'advice', $args );
+	$args = array(
+		'label'  => 'Healthy Marriage',
+		'labels' => array(
+			'singular_name' => 'Newsletter'
+			),
+		'public' => true,
+		'has_archive' => true,
+		'show_in_menu' => true,
+		'show_ui' => true,
+		'menu_position' => 5,
+		'taxonomies' => array('category', 'months'),
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+	);
+	register_post_type( 'marriage', $args );
+}
+add_action( 'init', 'create_post_type' );
+
 /**
  * Register widget area.
  *
@@ -129,7 +217,11 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
+/*Woocommerce Support*/
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 /*// Separete Login form and registration form */
 add_action('woocommerce_before_customer_login_form','load_registration_form', 2);
 	function load_registration_form(){

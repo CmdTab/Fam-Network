@@ -79,46 +79,7 @@
 				left: 0;
 				right: 0;
 			}
-			/*&.strong-marriage {
-				.front {
-					background: url(_i/strong-marriages-box.jpg) center center no-repeat;
-					background-size: cover;
-				}
-				.back {
-					background: url(_i/strong-marriages-box.jpg) center center no-repeat;
-					background-size: cover;
-				}
-			}
-			&.empowered-kids {
-				.front {
-					background: url(_i/empowered-kids-box.jpg) center center no-repeat;
-					background-size: cover;
-				}
-				.back {
-					background: url(_i/empowered-kids-box.jpg) center center no-repeat;
-					background-size: cover;
-				}
-			}
-			&.confident-parents {
-				.front {
-					background: url(_i/confident-parents-box.jpg) center center no-repeat;
-					background-size: cover;
-				}
-				.back {
-					background: url(_i/confident-parents-box.jpg) center center no-repeat;
-					background-size: cover;
-				}
-			}
-			&.healthy-leaders {
-				.front {
-					background: url(_i/healthy-leaders-box.jpg) center center no-repeat;
-					background-size: cover;
-				}
-				.back {
-					background: url(_i/healthy-leaders-box.jpg) center center no-repeat;
-					background-size: cover;
-				}
-			}*/
+
 		}
 		.boxed-info {
 			position: absolute;
@@ -149,7 +110,10 @@
 		.back {
 			.boxed-info {
 				h3 {
-					padding-top: 1em;
+					padding-top: 3em;
+					@include bp(50) {
+						padding-top: 1em;
+					}
 				}
 			}
 		}

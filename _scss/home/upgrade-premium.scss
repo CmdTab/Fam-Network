@@ -3,7 +3,6 @@
 		background-color: $purple;
 		position: relative;
 		color: white;
-		text-align: center;
 		padding: 5em 0 7em;
 		@include bp(50) {
 			text-align: left;
@@ -84,7 +83,7 @@
 		}
 		.two-list {
 			@include bp(44) {
-				text-align: right;
+				text-align: left;
 				font-size: 1.25em;
 				padding-top: 2.5%;
 			}
@@ -246,6 +245,9 @@
 		}
 		p {
 			font-size: 0.8em;
+			@include bp(50) {
+				font-size: 0.9em;
+			}
 		}
 	}
 }

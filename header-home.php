@@ -82,14 +82,7 @@
 	    </video>
 
 		<div class="fam-tagline">
-			<div id="carousel-example-generic" class="carousel slide fade" data-ride="carousel">
-				<!-- Indicators
-				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				</ol> -->
-
+			<div id="carousel-example-generic" class="carousel slide">
 				<div class="carousel-inner">
 					<?php $z = 0; ?>
 					<?php if( have_rows('banner_tagline') ): ?>
@@ -115,41 +108,11 @@
 					<?php endif; ?>
 
 				</div>
-
-				<!-- Wrapper for slides
-				<div class="carousel-inner">
-					<div class="item active">
-						<div class="carousel-caption">
-							<h1><?php // the_field('banner_header_text'); ?></h1>
-							<h4><?php // the_field('banner_sub_header'); ?></h4>
-						</div>
-					</div>
-			    	<div class="item">
-			      	<div class="carousel-caption">
-			         	<h1><?php // the_field('banner_header_text'); ?></h1>
-							<h4><?php // the_field('banner_sub_header'); ?></h4>
-			      	</div>
-			    	</div>
-			    	<div class="item">
-			      	<div class="carousel-caption">
-			         	<h1><?php // the_field('banner_header_text'); ?></h1>
-							<h4><?php // the_field('banner_sub_header'); ?></h4>
-			      	</div>
-			    	</div>
-			  	</div> -->
-
-				<!-- Controls
-				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a> -->
 			</div> <!-- Carousel -->
 			<!-- <h1><?php // the_field('banner_header_text'); ?></h1>
 			<h4><?php // the_field('banner_sub_header'); ?></h4> -->
 			<span class="btn clear-btn register-trigger"><?php the_field('left_button_text'); ?></span>
-			<a href="#" class="btn white-btn learn-more"><?php the_field('right_button_text'); ?></a>
+			<a href="#content" class="btn white-btn learn-more"><?php the_field('right_button_text'); ?></a>
 		</div>
 	</header><!-- #masthead -->
 
