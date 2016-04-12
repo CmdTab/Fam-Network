@@ -532,6 +532,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_scss\/dashboard.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_scss\/dashboard.scss",
+		"outputAbbreviatedPath": "\/css\/dashboard.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_scss\/flip-card.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -858,6 +874,15 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/css\/base.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/footer-dashboard.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/footer-dashboard.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1785,7 +1810,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Josh Rives",
+"lastSavedByUser": "Tristan Swire",
 "manualImportLinks": {
 	"\/_js\/famnetwork.js": [
 		{

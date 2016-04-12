@@ -1,28 +1,28 @@
-function navToggle () {
+function navToggle() {
 	jQuery('#toggle-nav').click(function() {
 		jQuery('#famnetwork-nav').slideToggle();
 		return false;
 	});
 }
 
-function stickyNav () {
+function stickyNav() {
 	jQuery('.site').waypoint(function(direction) {
 	   if (direction == 'down') {
-	   	jQuery('.site-header').addClass('sticky-nav');
+	   	jQuery('.famnetwork-nav-container').addClass('sticky-nav');
 	   } else {
-	   	jQuery('.site-header').removeClass('sticky-nav');
+	   	jQuery('.famnetwork-nav-container').removeClass('sticky-nav');
 	   }
 	}, { offset: -100 });
 }
 
-function resourceTabs () {
+function resourceTabs() {
 	jQuery('.nav-tabs a').click(function (e) {
 		e.preventDefault()
 		jQuery(this).tab('show')
 	});
 }
 
-function turnCard () {
+function turnCard() {
 	jQuery('.turn-btn').click(function() {
 		if(jQuery( this ).parent( '.front , .back' ).parent( '.flipper' ).parent( '.flip-container' ).hasClass( 'hover' )) {
 			jQuery( this ).parent( '.front , .back' ).parent( '.flipper' ).parent( '.flip-container' ).removeClass( 'hover');
@@ -41,7 +41,7 @@ function turnCard () {
 	});
 }
 
-function registerForm () {
+function registerForm() {
 	jQuery( '.register-trigger' ).click(function() {
 		if (jQuery('.register-form').hasClass('expanded')) {
 			jQuery( '.register-form' ).removeClass( 'expanded' );
@@ -53,13 +53,11 @@ function registerForm () {
 		return false;
 	});
 }
-
-function textCarousel () {
+function textCarousel() {
 	jQuery('.carousel').carousel({
 		interval: 5000
 	});
 }
-
 function accessPopup() {
 	jQuery('.access-icons a').click(function() {
 		if(jQuery(this).children('.access-popup').is(':hidden')) {
@@ -85,12 +83,18 @@ $(function() {
     }
   });
 });
-function matchProductheight () {
+function matchProductheight() {
 	jQuery('.products li').matchHeight();
 	jQuery('.products li img').matchHeight();
 	jQuery('.products li h3').matchHeight();
 	jQuery('.products li .price').matchHeight();
 }
+function accountTrigger() {
+	jQuery('.username').click(function() {
+		jQuery('.account-info').slideToggle();
+	});
+}
+
 jQuery(document).ready(function() {
 	var vw = jQuery(window).width();
 	if (vw > 800) {
@@ -99,6 +103,7 @@ jQuery(document).ready(function() {
 	if (vw < 800) {
 
 	}
+	accountTrigger();
 	resourceTabs();
 	registerForm();
 	turnCard();

@@ -182,31 +182,6 @@ get_header('home'); ?>
 						</div>
 					</div>
 				</li>
-				<li class="empowered-kids">
-					<div class="info-card flip-container">
-						<div class="flipper">
-							<div class="front" style="background: url(<?php the_field('second_box_background_image'); ?>) center center no-repeat; background-size: cover;">
-								<div class="boxed-info">
-									<a href="#" class="turn-btn">
-										<svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
-									</a>
-									<h3><?php the_field('second_box_header'); ?></h3>
-									<hr>
-								</div>
-							</div>
-							<div class="back" style="background: url(<?php the_field('second_box_background_image'); ?>) center center no-repeat; background-size: cover;">
-								<div class="boxed-info">
-									<a href="#" class="turn-btn">
-										<svg class="icon icon-minus"><use xlink:href="#icon-minus"></use></svg>
-									</a>
-									<h3><?php the_field('second_box_header'); ?></h3>
-									<hr>
-									<p><?php the_field('second_box_description'); ?></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
 				<li class="confident-parents">
 					<div class="info-card flip-container">
 						<div class="flipper">
@@ -227,6 +202,31 @@ get_header('home'); ?>
 									<h3><?php the_field('third_box_header'); ?></h3>
 									<hr>
 									<p><?php the_field('third_box_description'); ?></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="empowered-kids">
+					<div class="info-card flip-container">
+						<div class="flipper">
+							<div class="front" style="background: url(<?php the_field('second_box_background_image'); ?>) center center no-repeat; background-size: cover;">
+								<div class="boxed-info">
+									<a href="#" class="turn-btn">
+										<svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
+									</a>
+									<h3><?php the_field('second_box_header'); ?></h3>
+									<hr>
+								</div>
+							</div>
+							<div class="back" style="background: url(<?php the_field('second_box_background_image'); ?>) center center no-repeat; background-size: cover;">
+								<div class="boxed-info">
+									<a href="#" class="turn-btn">
+										<svg class="icon icon-minus"><use xlink:href="#icon-minus"></use></svg>
+									</a>
+									<h3><?php the_field('second_box_header'); ?></h3>
+									<hr>
+									<p><?php the_field('second_box_description'); ?></p>
 								</div>
 							</div>
 						</div>
@@ -276,7 +276,7 @@ get_header('home'); ?>
 							<?php while ( have_rows('premium_list') ) : the_row(); ?>
 							<li>
 								<?php include('svg/icon-check.php'); ?>
-								<?php the_sub_field('premium_benefit'); ?>
+								<span><?php the_sub_field('premium_benefit'); ?></span>
 							</li>
 							<?php endwhile; ?>
 						</ul>
@@ -410,13 +410,13 @@ get_header('home'); ?>
 				</li>
 				<li role="presentation">
 					<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-						<?php include('svg/icon-kids.php'); ?>
+						<?php include('svg/icon-confident.php'); ?>
 						<h3><?php the_field('second_tab_header'); ?></h3>
 					</a>
 				</li>
 				<li role="presentation">
 					<a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-						<?php include('svg/icon-confident.php'); ?>
+						<?php include('svg/icon-kids.php'); ?>
 						<h3><?php the_field('third_tab_header'); ?></h3>
 					</a>
 				</li>
@@ -432,7 +432,7 @@ get_header('home'); ?>
 			<div class="tab-content group">
 				<div role="tabpanel" class="tab-pane group active" id="home" style="background: url(<?php the_field('first_tab_background_image'); ?>) center center no-repeat; background-size: cover;">
 					<div class="resource-forty">
-						<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+						<a href="#home" aria-controls="settings" role="tab" data-toggle="tab">
 							<?php include('svg/icon-marriage.php'); ?>
 							<h3><?php the_field('first_tab_header'); ?></h3>
 						</a>
@@ -448,7 +448,7 @@ get_header('home'); ?>
 				</div>
 				<div role="tabpanel" class="tab-pane group" id="profile" style="background: url(<?php the_field('second_tab_background_image'); ?>) center center no-repeat; background-size: cover;">
 					<div class="resource-forty">
-						<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+						<a href="#profile" aria-controls="settings" role="tab" data-toggle="tab">
 							<?php include('svg/icon-kids.php'); ?>
 							<h3><?php the_field('second_tab_header'); ?></h3>
 						</a>
@@ -464,7 +464,7 @@ get_header('home'); ?>
 				</div>
 				<div role="tabpanel" class="tab-pane group" id="messages" style="background: url(<?php the_field('third_tab_background_image'); ?>) center center no-repeat; background-size: cover;">
 					<div class="resource-forty">
-						<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+						<a href="#messages" aria-controls="settings" role="tab" data-toggle="tab">
 							<?php include('svg/icon-confident.php'); ?>
 							<h3><?php the_field('third_tab_header'); ?></h3>
 						</a>

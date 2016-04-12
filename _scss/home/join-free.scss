@@ -109,9 +109,6 @@
 			}
 		}
 	}
-	h2 {
-		text-transform: uppercase;
-	}
 	&.half {
 		width: 50%;
 		float: left;
@@ -121,10 +118,11 @@
 		padding: 3em;
 	}
 	h2 {
+		text-transform: uppercase;
 		color: white;
 		text-align: center;
 		position: relative;
-		padding-top: 1.5em;
+		padding-top: 3em;
 		@include bp(50) {
 			padding-top: 0;
 		}
@@ -141,6 +139,9 @@
 		margin: 0.25em auto;
 		font-size: 5em;
 		display: block;
+		@include bp(100) {
+			font-size: 3.5em;
+		}
 	}
 	.turn-btn {
 		top: 0;
@@ -172,6 +173,9 @@
 			@include bp(44) {
 				font-size: 1em;
 			}
+		}
+		.turn-btn:after {
+			border-top-color: rgba(255, 255, 255, 0.5);
 		}
 	}
 }

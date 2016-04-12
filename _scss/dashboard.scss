@@ -1,0 +1,149 @@
+.dashboard-main {
+   background-color: white;
+   @include bp(44) {
+      width: 75%;
+      float: left;
+   }
+}
+.dashboard-header {
+   background: darken($purple,7.5%);
+   padding: 0.875em 1.5em;
+   position: relative;
+   .dashboard-nav {
+      float: right;
+      .light-teal-btn,
+      .clear-btn {
+         padding: 0.15em 1em;
+      }
+      .clear-btn {
+         border-color: $light-teal;
+         &:hover {
+            background-color: $light-teal;
+            color: $purple;
+         }
+      }
+      .icon-user {
+         font-size: 2em;
+         vertical-align: middle;
+         margin: 0 0.25em;
+      }
+      .username {
+         color: white;
+         font-weight: 700;
+         font-size: 1.15em;
+         font-family: 'Oswald', sans-serif;
+         transition: all 250ms ease;
+         &:hover {
+            color: $light-teal;
+         }
+      }
+   }
+   .dashboard-search {
+      float: left;
+   }
+   .search-form {
+      display: inline-block;
+      position: relative;
+      margin: 0;
+      input {
+         border: none;
+         padding: 0.5em;
+         background: transparent;
+         color: white;
+      }
+      input[type="search"] {
+         min-width: 20em;
+      }
+      input[type="submit"] {
+         position: absolute;
+         left: 0;
+         top: 0;
+      }
+      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+         color: #fff;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+         color: #fff;
+         opacity:  1;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+         color: #fff;
+         opacity:  1;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+         color: #fff;
+      }
+   }
+   .search-trigger {
+      display: inline-block;
+      padding-right: 0.5em;
+      vertical-align: middle;
+      font-size: 1.5em;
+   }
+   .account-info {
+      display: none;
+      position: absolute;
+      top: 4.25em;
+      right: 0.4em;
+      background-color: $light-teal;
+      color: white;
+      padding: 1em;
+      min-width: 28em;
+      &:after {
+         content: '';
+         top: -1em;
+         right: 0.75em;
+         width: 0;
+         height: 0;
+         position: absolute;
+         border-left: 1.5em solid transparent;
+         border-right: 1.5em solid transparent;
+         border-bottom: 1.5em solid $light-teal;
+      }
+      .icon {
+         font-size: 3em;
+      }
+      h3 {
+         margin: 0;
+      }
+      .buttons {
+         display: block;
+         margin-top: 1em;
+         a {
+            display: inline-block;
+         }
+      }
+      .two-third {
+         a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.875em;
+         }
+         .buttons {
+            a:first-child {
+               margin-right: 1em;
+            }
+         }
+      }
+   }
+}
+.dashboard-content {
+   padding: 1em 2em;
+   background: $purple;
+   .training {
+      text-align: center;
+      h2 {
+         color: white;
+         text-transform: uppercase;
+         font-size: 2.5em;
+      }
+      .icon {
+         margin-top: -0.25em;
+         font-size: 1.25em;
+         vertical-align: middle;
+      }
+   }
+}
+.entry-content {
+   padding: 1em 2em;
+}

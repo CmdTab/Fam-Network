@@ -11,6 +11,9 @@
 			vertical-align: middle;
 			font-size: 1.5em;
 			margin-right: 0.25em;
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 		.top {
 			display: none;
@@ -82,10 +85,19 @@
 			}
 		}
 		.two-list {
+			padding-bottom: 2em;
 			@include bp(44) {
 				text-align: left;
 				font-size: 1.25em;
 				padding-top: 2.5%;
+				padding-bottom: 0;
+			}
+			li {
+				position: relative;
+			}
+			span {
+				margin-left: 2.5em;
+				display: block;
 			}
 		}
 		.clear-btn,
@@ -195,6 +207,9 @@
 			margin: 0 auto;
 			display: block;
 			font-size: 5em;
+			@include bp(100) {
+				font-size: 3.5em;
+			}
 		}
 		.turn-btn {
 			position: absolute;
@@ -236,7 +251,10 @@
 		color: white;
 		h3 {
 			text-transform: uppercase;
-			padding-top: 1em;
+			padding-top: 2.5em;
+			@include bp(44) {
+				padding-top: 1em;
+			}
 		}
 		hr {
 			height: 0.25em;
@@ -307,6 +325,8 @@
 		transform: translate(-50%, -50%);
 		width: 0.25em;
 		height: 0.25em;
-
+		@include bp(100) {
+			font-size: 3em !important;
+		}
 	}
 }

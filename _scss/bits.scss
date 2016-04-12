@@ -1,4 +1,7 @@
 @mixin bp($point) {
+	@if $point == 100 {
+		@media (min-width: 100em) { @content; }
+	}
 	@if $point == 80 {
 		@media (min-width: 80em) { @content; }
 	}

@@ -65,6 +65,25 @@ a {
 		border-color: $orange;
 	}
 }
+.teal-btn {
+	@include button($teal, #fff);
+	border: 1px solid $teal;
+	&:hover {
+		background-color: $purple;
+		color: #fff;
+		border-color: $teal;
+	}
+}
+.light-teal-btn {
+	@include button($light-teal, #fff);
+	border: 1px solid $light-teal;
+	color: $purple;
+	&:hover {
+		background-color: $purple;
+		color: #fff;
+		border-color: $light-teal;
+	}
+}
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Oswald', sans-serif;
@@ -127,3 +146,4 @@ Example showing how to change the color/size of the icons:
 @import "products";
 @import "membership";
 @import "sidebar";
+@import "dashboard";
