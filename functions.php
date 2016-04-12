@@ -74,7 +74,7 @@ add_action( 'after_setup_theme', 'start_setup' );
 function create_tax() {
 	register_taxonomy(
 		'months',
-		array('post', 'podcast', 'culture', 'webinar'),
+		array('post', 'podcast', 'culture', 'webinar', 'advice', 'marriage'),
 		array(
 			'label' => __( 'Months' ),
 			'hierarchical' => false,
