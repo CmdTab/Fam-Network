@@ -20,6 +20,7 @@
 <?php wp_head(); ?>
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/mediaelementplayer.css" />
 <!--[if lt IE 9]>
 	<script src="<?php bloginfo('template_directory'); ?>/_js/html5shiv.js"></script>
 <![endif]-->
@@ -44,8 +45,10 @@
 				</form>
 			</div>
 			<div class="dashboard-nav">
-				<a href="#" class="light-teal-btn">Upgrade to Premium</a>
-				<a href="#" class="clear-btn">View Cart</a>
+				<div>
+					<a href="#" class="light-teal-btn">Upgrade to Premium</a>
+					<a href="#" class="clear-btn">View Cart</a>
+				</div>
 				<span><?php include('svg/icon-user.php'); ?></span>
 				<a href="#" class="username">John</a>
 			</div>

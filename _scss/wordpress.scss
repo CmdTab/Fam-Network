@@ -1,0 +1,32 @@
+.content-area {
+	padding: 4em 0;
+}
+
+article {
+	padding-bottom: 2.5em;
+	margin-bottom: 2.5em;
+	border-bottom: 1px solid darken($gray,15%);
+	&:last-of-type {
+		border-bottom: none;
+	}
+	a {
+		color: $teal;
+	}
+	h1 {
+		font-size: 2.5em;
+		margin-bottom: 0;
+	}
+	.entry-meta,
+	.entry-content {
+		font-size: 0.875em;
+	}
+	.entry-meta {
+		padding-bottom: 1em;
+	}
+	.entry-footer {
+		font-size: 0.875em;
+		.comments-link {
+			padding-right: 0.5em;
+		}
+	}
+}

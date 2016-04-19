@@ -70,7 +70,7 @@ function accessPopup() {
 	});
 }
 $(function() {
-	$('a[href*="#"]:not([href="#"])').click(function() {
+	$('.home a[href*="#"]:not([href="#"])').click(function() {
    	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -94,6 +94,9 @@ function accountTrigger() {
 		jQuery('.account-info').slideToggle();
 	});
 }
+function audioPlayer() {
+	jQuery('video,audio').mediaelementplayer();
+}
 
 jQuery(document).ready(function() {
 	var vw = jQuery(window).width();
@@ -103,6 +106,7 @@ jQuery(document).ready(function() {
 	if (vw < 800) {
 
 	}
+	audioPlayer();
 	accountTrigger();
 	resourceTabs();
 	registerForm();

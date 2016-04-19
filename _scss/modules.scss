@@ -255,3 +255,11 @@ hr {
 	text-decoration: none;
 	z-index: 2001;
 }
+.full-grid {
+	max-width: 67.5em;
+	margin: 0 auto;
+	width: 90%;
+	@include bp(67.5) {
+		width: 100%;
+	}
+}

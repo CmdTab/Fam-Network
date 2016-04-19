@@ -52,7 +52,7 @@
 		</div>
 	</div>
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header home-header" role="banner">
 		<div class="famnetwork-nav-container group">
 			<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<img src ="<?php bloginfo('template_directory'); ?>/_i/fam-network-logo.png">

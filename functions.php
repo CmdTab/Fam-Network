@@ -130,7 +130,7 @@ function create_post_type() {
 	$args = array(
 		'label'  => 'Good Advice',
 		'labels' => array(
-			'singular_name' => 'Newsletter'
+			'singular_name' => 'Advice'
 			),
 		'public' => true,
 		'has_archive' => true,
@@ -144,7 +144,7 @@ function create_post_type() {
 	$args = array(
 		'label'  => 'Healthy Marriage',
 		'labels' => array(
-			'singular_name' => 'Newsletter'
+			'singular_name' => 'Marriage'
 			),
 		'public' => true,
 		'has_archive' => true,
@@ -230,5 +230,3 @@ add_action('woocommerce_before_customer_login_form','load_registration_form', 2)
 	}
 }
 
-// Display 12 products at a time
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );

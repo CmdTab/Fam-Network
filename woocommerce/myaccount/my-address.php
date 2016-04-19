@@ -36,7 +36,7 @@ if ( ! wc_ship_to_billing_address_only() && get_option( 'woocommerce_calc_shippi
 
 $col = 1;
 ?>
-<div class="account-grid">
+<div class="account-grid my-address">
 	<h2><?php echo $page_title; ?></h2>
 
 	<p class="myaccount_address">

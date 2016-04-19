@@ -1,0 +1,15 @@
+.dash-single-content {
+   padding: 2em;
+   .entry-header {
+      padding-bottom: 1em;
+      .entry-title {
+         margin-bottom: 0;
+      }
+      .updated {
+         display: none;
+      }
+   }
+   .entry-content {
+      max-width: 44em;
+   }
+}

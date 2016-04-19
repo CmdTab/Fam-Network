@@ -15,7 +15,7 @@
 			content: '';
 			height: 0.25em;
 			width: 3em;
-			background-color: $orange;
+			background-color: rgba(255, 255, 255, 0.75);
 			margin: 0 auto;
 		}
 	}
@@ -28,7 +28,7 @@
 			background-color: rgba(93, 53, 105, 0.75);
 		}
 		@include bp(67.5) {
-			padding: 5.7em 5em;
+			padding: 5.7em 4em;
 		}
 		hr {
 			margin: 1em 0;
@@ -112,6 +112,7 @@
 	&.half {
 		width: 50%;
 		float: left;
+		padding: 0 1em;
 	}
 	@include bp(50) {
 		background: rgba(175,75,103,0.75);
@@ -122,12 +123,22 @@
 		color: white;
 		text-align: center;
 		position: relative;
-		padding-top: 3em;
+		padding-top: 1em;
+		font-size: 1.25em;
+		@include bp(30) {
+			padding-top: 3em;
+		}
 		@include bp(50) {
-			padding-top: 0;
+			padding-top: 1.5em;
+		}
+		@include bp(67.5) {
+			font-size: 1.5em;
 		}
 	}
 	.front {
+		@include bp(50) {
+			top: 3em;
+		}
 		h2 {
 			padding-top: 3em;
 			@include bp(50) {
@@ -139,6 +150,7 @@
 		margin: 0.25em auto;
 		font-size: 5em;
 		display: block;
+		fill: white;
 		@include bp(100) {
 			font-size: 3.5em;
 		}
@@ -168,9 +180,10 @@
 		}
 	}
 	.back {
+		top: 0;
 		p {
-			font-size: 0.75em;
-			@include bp(44) {
+			font-size: 0.8em;
+			@include bp(80) {
 				font-size: 1em;
 			}
 		}
@@ -189,5 +202,6 @@
 .join-free {
 	.flip-container {
 		margin: 0;
+		padding: 0 1em;
 	}
 }

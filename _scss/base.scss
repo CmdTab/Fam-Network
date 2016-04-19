@@ -112,10 +112,6 @@ h4 {
 	}
 }
 
-.content-area {
-	padding: 4em 0;
-}
-
 .icon {
 	display: inline-block;
 	width: 1em;
@@ -136,6 +132,8 @@ Example showing how to change the color/size of the icons:
 @import "header";
 @import "flip-card";
 @import "carousel";
+@import "wordpress";
+@import "woocommerce";
 @import "home/resources";
 @import "home/get-connected";
 @import "home/join-free";
@@ -145,5 +143,6 @@ Example showing how to change the color/size of the icons:
 @import "forms";
 @import "products";
 @import "membership";
-@import "sidebar";
 @import "dashboard";
+@import "dashboard-single";
+@import "sidebar";

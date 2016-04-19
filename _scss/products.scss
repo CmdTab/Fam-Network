@@ -26,14 +26,6 @@
 					margin-right: 0;
 				}
 			}
-			span.onsale {
-				height: 2em;
-				width: 2em;
-				top: 1em;
-				right: 1em;
-				font-size: 0.8em;
-				background-color: $orange;
-			}
 			a {
 				display: block;
 				padding: 1em 1em 2em;
@@ -47,10 +39,7 @@
 				color: $text;
 			}
 			.price {
-				font-size: 1em;
-				@include bp(50) {
-					font-size: 1.15em;
-				}
+				font-size: 0.875em;
 				del,
 				.amount {
 					color: $text;
@@ -97,9 +86,22 @@
 		}
 	}
 }
+.woocommerce-tabs {
+	.panel {
+		border-bottom: 1px solid #d3ced2;
+		margin-bottom: 2.5em !important;
+		padding-bottom: 1.5em !important;
+	}
+}
 
 .single-product-container {
 	max-width: 67.5em;
 	margin: 0 auto;
 	padding: 3em 0;
+	.price {
+		del,
+		ins {
+			display: block;
+		}
+	}
 }

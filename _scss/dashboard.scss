@@ -1,3 +1,153 @@
+.page-dashboard {
+   padding: 0;
+   background: white;
+   background: linear-gradient(to right, $purple, $purple 25%, white 25%, white 100% );
+   .site {
+      box-shadow: none;
+   }
+   .site-content {
+      padding: 2em;
+   }
+   .dashboard-sidebar,
+   .default-sidebar {
+      display: none;
+      background-color: $purple;
+      @include bp(44) {
+         display: block;
+         width: 25%;
+         float: left;
+      }
+      .site-logo {
+         float: none;
+         margin: 0 auto;
+         padding: 2em 0;
+         max-width: 12em;
+      }
+      .current-month {
+         background: lighten($purple, 15%);
+         position: relative;
+         padding: 0.35em;
+         font-weight: 500;
+         &:hover {
+            text-decoration: none;
+            background-color: lighten($purple, 10%);
+            &:after {
+               background-color: lighten($purple, 10%);
+            }
+         }
+         &:after {
+            transition: all 250ms ease-in-out;
+            content: '';
+            position: absolute;
+            top: 0.85em;
+            right: -0.5em;
+            margin: 0 auto;
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            background-color: lighten($purple, 15%);
+            z-index: 100;
+         }
+         span {
+            display: block;
+            font-size: 0.65em;
+            text-transform: none;
+            font-weight: 300;
+         }
+      }
+      .dashboard-history {
+         color: white;
+      }
+      .month-history {
+         padding: 0 2em 2em;
+         ul {
+            margin: 0 auto;
+            margin-left: 35%;
+            padding: 0;
+            list-style: none;
+            font-family: 'Oswald', sans-serif;
+         }
+         li {
+            position: relative;
+            /* &:after {
+               content: '';
+               width: 0.25em;
+               height: 0.25em;
+               background-color: white;
+               border-radius: 50%;
+               position: absolute;
+               top: 0.65em;
+               left: -0.875em;
+            } */
+            .icon {
+               position: absolute;
+               left: -1.5em;
+               top: 0.3em;
+            }
+         }
+         a {
+            color: white;
+            text-decoration: none;
+            transition: all 250ms ease-in-out;
+            &:hover {
+               color: $light-teal;
+            }
+         }
+         .header {
+            font-size: 1.5em;
+            margin-left: -1.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+         }
+         .load-history {
+            margin: 1.5em auto 0;
+            display: block;
+            color: white;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+         }
+      }
+   }
+}
+.dashboard-shop,
+.current-month {
+   display: block;
+   margin-bottom: 1em;
+   width: 100%;
+   padding: 0.75em;
+   font-size: 1.5em;
+   background: $light-teal;
+   text-align: center;
+   color: white;
+   text-transform: uppercase;
+   font-family: 'Oswald', sans-serif;
+   transition: all 250ms ease-in-out;
+   &:hover {
+      text-decoration: none;
+      background-color: darken($light-teal,15%);
+   }
+}
+.product-feature {
+   background-color: lighten($purple,5%);
+   font-family: 'Oswald', sans-serif;
+   text-align: center;
+   width: 85%;
+   margin: 0 auto;
+   padding: 2em 1em;
+   p,
+   h4 {
+      margin: 0;
+      font-size: 1em;
+      font-family: 'Oswald', sans-serif;
+   }
+   h4 {
+      padding: 0.25em 0 0.5em;
+      font-style: normal;
+   }
+   img {
+      margin-bottom: 0.875em;
+   }
+}
 .dashboard-main {
    background-color: white;
    @include bp(44) {
@@ -5,12 +155,31 @@
       float: left;
    }
 }
+.dashboard-full {
+   width: 100%;
+   background: darken($gray,15%);
+   .full-grid {
+      border-radius: 0.5em;
+      background: white;
+      padding: 2em;
+      max-width: 50em;
+   }
+}
+.dashboard-shop {
+   font-weight: 500;
+}
 .dashboard-header {
    background: darken($purple,7.5%);
    padding: 0.875em 1.5em;
    position: relative;
    .dashboard-nav {
       float: right;
+      div:first-of-type {
+         display: none;
+         @include bp(50) {
+            display: inline-block;
+         }
+      }
       .light-teal-btn,
       .clear-btn {
          padding: 0.15em 1em;
@@ -59,6 +228,12 @@
          left: 0;
          top: 0;
       }
+      label {
+         display: none;
+         @include bp(50) {
+            display: inline;
+         }
+      }
       ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
          color: #fff;
       }
@@ -88,7 +263,8 @@
       background-color: $light-teal;
       color: white;
       padding: 1em;
-      min-width: 28em;
+      min-width: 26em;
+      z-index: 10;
       &:after {
          content: '';
          top: -1em;
@@ -114,6 +290,8 @@
          }
       }
       .two-third {
+         width: 80%;
+         float: left;
          a {
             color: white;
             text-decoration: none;
@@ -125,25 +303,114 @@
             }
          }
       }
+      .third {
+         width: 15%;
+         float: left;
+      }
    }
 }
 .dashboard-content {
-   padding: 1em 2em;
-   background: $purple;
+   padding: 0;
+   /* background: url(_i/dash-bg.jpg) 100% 100% / contain no-repeat fixed; */
+   position: relative;
+   &:after {
+      content: '';
+      /* background-color: rgba(65,163,156,0.85); */
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+   }
    .training {
       text-align: center;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
       h2 {
-         color: white;
+         position: relative;
+         color: $purple;
          text-transform: uppercase;
          font-size: 2.5em;
-      }
-      .icon {
-         margin-top: -0.25em;
-         font-size: 1.25em;
-         vertical-align: middle;
+         width: 6em;
+         margin: 0 auto 0.5em;
+         &:before,
+         &:after {
+            content: '';
+            width: 170%;
+            height: 0.05em;
+            background: $purple;
+            position: absolute;
+            left: 6.5em;
+            top: 0.7em;
+         }
+         &:after {
+            right: 6.5em;
+            left: auto;
+         }
+         .icon {
+            margin-top: -0.15em;
+            font-size: 1.25em;
+            vertical-align: middle;
+         }
       }
    }
-}
-.entry-content {
-   padding: 1em 2em;
+   .three-list {
+      color: white;
+      padding: 2em 0;
+      li {
+         padding: 0 0 2em;
+         width: 50%;
+         float: left;
+         margin: 0;
+         &:nth-child(4n) {
+            clear: none;
+         }
+         @include bp(50) {
+            width: 33.333%;
+            &:nth-child(4n) {
+               clear: left;
+            }
+         }
+      }
+      h3 {
+         padding-top: 1em;
+         text-transform: uppercase;
+         font-size: 1.25em;
+         font-weight: 500;
+         color: $purple;
+         @include bp(50) {
+            font-size: 1.5em;
+         }
+      }
+      .icon {
+         font-size: 4.5em;
+         display: block;
+         margin: 0 auto;
+         fill: $purple;
+         @include bp(50) {
+            font-size: 7em;
+         }
+      }
+      a {
+         display: block;
+         &:hover {
+            text-decoration: none;
+            h3,
+            .icon {
+               color: $light-teal;
+               fill: $light-teal;
+            }
+         }
+      }
+   }
+   .support {
+      border-bottom: 2px solid $purple;
+   }
+   .entry-content {
+      padding: 2em 0;
+      position: relative;
+      z-index: 1;
+   }
 }
