@@ -5,11 +5,11 @@
  * @package WordPress Start
  */
 
-get_header(); ?>
+ get_header('dashboard'); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+ 	<div id="primary" class="page-dashboard page-sidebar group">
 
+ 		<main id="main" role="main">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
@@ -39,7 +39,5 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+	</div><!-- #primary -->
+	<?php get_footer('dashboard'); ?>

@@ -19,8 +19,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+ ?>
+<section id="primary" class="content-area page-dashboard group">
+	<?php get_sidebar('dashboard'); ?>
+	<main id="main" class="site-main dashboard-main" role="main">
+
+		<?php get_header('dashboard'); ?>
 <div class="products-page">
+
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -35,7 +41,7 @@ get_header( 'shop' ); ?>
 
 			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
 			<hr />
-			
+
 		<?php endif; ?>
 
 		<?php
@@ -105,4 +111,6 @@ get_header( 'shop' ); ?>
 		// do_action( 'woocommerce_sidebar' );
 	?>
 </div>
+</main>
+</section>
 <?php get_footer( 'shop' ); ?>

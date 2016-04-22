@@ -73,10 +73,18 @@ add_action( 'after_setup_theme', 'start_setup' );
 /***Custom Taxonomies***/
 function create_tax() {
 	register_taxonomy(
-		'months',
-		array('post', 'podcast', 'culture', 'webinar', 'advice', 'marriage'),
+		'month',
+		array('post', 'podcast', 'articles', 'downloads'),
 		array(
-			'label' => __( 'Months' ),
+			'label' => __( 'Month' ),
+			'hierarchical' => false,
+		)
+	);
+	register_taxonomy(
+		'type',
+		array('post', 'podcasts', 'articles', 'downloads'),
+		array(
+			'label' => __( 'Type' ),
 			'hierarchical' => false,
 		)
 	);
@@ -89,17 +97,46 @@ function create_post_type() {
 		'labels' => array(
 			'singular_name' => 'Podcast'
 			),
-		'description' => 'Monthly podcasts',
+		'description' => 'Podcasts',
 		'public' => true,
 		'has_archive' => true,
 		'show_in_menu' => true,
 		'show_ui' => true,
 		'menu_position' => 5,
-		'taxonomies' => array('category', 'months'),
+		'taxonomies' => array('category', 'month', 'type'),
 		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
 	);
-	register_post_type( 'podcast', $args );
+	register_post_type( 'podcasts', $args );
 	$args = array(
+		'label'  => 'Downloads',
+		'labels' => array(
+			'singular_name' => 'Download'
+			),
+		'description' => 'Downloads',
+		'public' => true,
+		'has_archive' => true,
+		'show_in_menu' => true,
+		'show_ui' => true,
+		'menu_position' => 5,
+		'taxonomies' => array('category', 'month', 'type'),
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+	);
+	register_post_type( 'downloads', $args );
+	$args = array(
+		'label'  => 'Articles',
+		'labels' => array(
+			'singular_name' => 'Article'
+			),
+		'public' => true,
+		'has_archive' => true,
+		'show_in_menu' => true,
+		'show_ui' => true,
+		'menu_position' => 5,
+		'taxonomies' => array('category', 'month', 'type'),
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
+	);
+	register_post_type( 'articles', $args );
+	/*$args = array(
 		'label'  => 'Webinars',
 		'labels' => array(
 			'singular_name' => 'Webinar'
@@ -128,9 +165,9 @@ function create_post_type() {
 	);
 	register_post_type( 'culture', $args );
 	$args = array(
-		'label'  => 'Good Advice',
+		'label'  => 'Parent Newsletter',
 		'labels' => array(
-			'singular_name' => 'Advice'
+			'singular_name' => 'Newsletter'
 			),
 		'public' => true,
 		'has_archive' => true,
@@ -140,21 +177,8 @@ function create_post_type() {
 		'taxonomies' => array('category', 'months'),
 		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
 	);
-	register_post_type( 'advice', $args );
-	$args = array(
-		'label'  => 'Healthy Marriage',
-		'labels' => array(
-			'singular_name' => 'Marriage'
-			),
-		'public' => true,
-		'has_archive' => true,
-		'show_in_menu' => true,
-		'show_ui' => true,
-		'menu_position' => 5,
-		'taxonomies' => array('category', 'months'),
-		'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'author'),
-	);
-	register_post_type( 'marriage', $args );
+	register_post_type( 'parent', $args );*/
+
 }
 add_action( 'init', 'create_post_type' );
 
@@ -222,11 +246,21 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
-/*// Separete Login form and registration form */
-add_action('woocommerce_before_customer_login_form','load_registration_form', 2);
-	function load_registration_form(){
-	if(isset($_GET['action'])=='register'){
-		woocommerce_get_template( 'myaccount/form-registration.php' );
-	}
-}
 
+// Ensure cart contents update when products are added to the cart via AJAX (place the following in functions.php)
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	ob_start();
+	?>
+	<a class="cart-contents clear-btn" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
+	<?php
+
+	$fragments['a.cart-contents'] = ob_get_clean();
+
+	return $fragments;
+}
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page();
+
+}

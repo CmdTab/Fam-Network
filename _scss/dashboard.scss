@@ -1,116 +1,57 @@
-.page-dashboard {
-   padding: 0;
-   background: white;
-   background: linear-gradient(to right, $purple, $purple 25%, white 25%, white 100% );
-   .site {
-      box-shadow: none;
+.current-month {
+    display: block;
+   background: lighten($purple, 15%);
+   position: relative;
+   padding: 0.35em;
+   font-weight: 500;
+   margin-bottom: 1em;
+   font-size: 1.5em;
+   text-align: center;
+   color: white;
+   text-transform: uppercase;
+   font-family: 'Oswald', sans-serif;
+   transition: all 250ms ease-in-out;
+   &:hover {
+      text-decoration: none;
+      background-color: lighten($purple, 10%);
+      color: #fff;
    }
-   .site-content {
-      padding: 2em;
+   span {
+      display: block;
+      font-size: 0.65em;
+      text-transform: none;
+      font-weight: 300;
    }
-   .dashboard-sidebar,
-   .default-sidebar {
-      display: none;
-      background-color: $purple;
-      @include bp(44) {
-         display: block;
-         width: 25%;
-         float: left;
-      }
-      .site-logo {
-         float: none;
-         margin: 0 auto;
-         padding: 2em 0;
-         max-width: 12em;
-      }
-      .current-month {
-         background: lighten($purple, 15%);
-         position: relative;
-         padding: 0.35em;
-         font-weight: 500;
-         &:hover {
-            text-decoration: none;
-            background-color: lighten($purple, 10%);
+}
+
+.woocommerce-account {
+    .current-month {
+        &.no-bubble {
+            &:after {
+                display: none;
+            }
+        }
+        &:after {
+           transition: all 250ms ease-in-out;
+           content: '';
+           position: absolute;
+           top: 0.85em;
+           right: -0.5em;
+           margin: 0 auto;
+           width: 1.5em;
+           height: 1.5em;
+           border-radius: 50%;
+           background-color: lighten($purple, 15%);
+           z-index: 100;
+        }
+        &:hover {
             &:after {
                background-color: lighten($purple, 10%);
             }
-         }
-         &:after {
-            transition: all 250ms ease-in-out;
-            content: '';
-            position: absolute;
-            top: 0.85em;
-            right: -0.5em;
-            margin: 0 auto;
-            width: 1.5em;
-            height: 1.5em;
-            border-radius: 50%;
-            background-color: lighten($purple, 15%);
-            z-index: 100;
-         }
-         span {
-            display: block;
-            font-size: 0.65em;
-            text-transform: none;
-            font-weight: 300;
-         }
-      }
-      .dashboard-history {
-         color: white;
-      }
-      .month-history {
-         padding: 0 2em 2em;
-         ul {
-            margin: 0 auto;
-            margin-left: 35%;
-            padding: 0;
-            list-style: none;
-            font-family: 'Oswald', sans-serif;
-         }
-         li {
-            position: relative;
-            /* &:after {
-               content: '';
-               width: 0.25em;
-               height: 0.25em;
-               background-color: white;
-               border-radius: 50%;
-               position: absolute;
-               top: 0.65em;
-               left: -0.875em;
-            } */
-            .icon {
-               position: absolute;
-               left: -1.5em;
-               top: 0.3em;
-            }
-         }
-         a {
-            color: white;
-            text-decoration: none;
-            transition: all 250ms ease-in-out;
-            &:hover {
-               color: $light-teal;
-            }
-         }
-         .header {
-            font-size: 1.5em;
-            margin-left: -1.15em;
-            text-transform: uppercase;
-            font-weight: 500;
-         }
-         .load-history {
-            margin: 1.5em auto 0;
-            display: block;
-            color: white;
-            text-align: center;
-            font-family: 'Oswald', sans-serif;
-         }
-      }
-   }
+        }
+    }
 }
-.dashboard-shop,
-.current-month {
+.dashboard-shop {
    display: block;
    margin-bottom: 1em;
    width: 100%;
@@ -125,34 +66,7 @@
    &:hover {
       text-decoration: none;
       background-color: darken($light-teal,15%);
-   }
-}
-.product-feature {
-   background-color: lighten($purple,5%);
-   font-family: 'Oswald', sans-serif;
-   text-align: center;
-   width: 85%;
-   margin: 0 auto;
-   padding: 2em 1em;
-   p,
-   h4 {
-      margin: 0;
-      font-size: 1em;
-      font-family: 'Oswald', sans-serif;
-   }
-   h4 {
-      padding: 0.25em 0 0.5em;
-      font-style: normal;
-   }
-   img {
-      margin-bottom: 0.875em;
-   }
-}
-.dashboard-main {
-   background-color: white;
-   @include bp(44) {
-      width: 75%;
-      float: left;
+      color: #fff;
    }
 }
 .dashboard-full {
@@ -162,7 +76,7 @@
       border-radius: 0.5em;
       background: white;
       padding: 2em;
-      max-width: 50em;
+      max-width: 67.5em;
    }
 }
 .dashboard-shop {
@@ -184,12 +98,15 @@
       .clear-btn {
          padding: 0.15em 1em;
       }
-      .clear-btn {
-         border-color: $light-teal;
-         &:hover {
-            background-color: $light-teal;
-            color: $purple;
-         }
+      .cart-contents {
+          	@include button(transparent, #fff);
+          	border: 1px solid #fff;
+            padding: 0.15em 1em;
+          	&:hover {
+          		background-color: transparent;
+          		color: white;
+          		border-color: $light-teal;
+          	}
       }
       .icon-user {
          font-size: 2em;
@@ -207,54 +124,7 @@
          }
       }
    }
-   .dashboard-search {
-      float: left;
-   }
-   .search-form {
-      display: inline-block;
-      position: relative;
-      margin: 0;
-      input {
-         border: none;
-         padding: 0.5em;
-         background: transparent;
-         color: white;
-      }
-      input[type="search"] {
-         min-width: 20em;
-      }
-      input[type="submit"] {
-         position: absolute;
-         left: 0;
-         top: 0;
-      }
-      label {
-         display: none;
-         @include bp(50) {
-            display: inline;
-         }
-      }
-      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-         color: #fff;
-      }
-      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-         color: #fff;
-         opacity:  1;
-      }
-      ::-moz-placeholder { /* Mozilla Firefox 19+ */
-         color: #fff;
-         opacity:  1;
-      }
-      :-ms-input-placeholder { /* Internet Explorer 10-11 */
-         color: #fff;
-      }
-   }
-   .search-trigger {
-      display: inline-block;
-      padding-right: 0.5em;
-      vertical-align: middle;
-      font-size: 1.5em;
-   }
+
    .account-info {
       display: none;
       position: absolute;
@@ -323,38 +193,63 @@
       bottom: 0;
       z-index: 0;
    }
-   .training {
-      text-align: center;
-      overflow: hidden;
+
+}
+.account-stuff {
+    padding: 2em;
+    position: relative;
+    z-index: 1;
+    background: $gray;
+    .entry-header {
+        margin-bottom: 0.75em;
+        border-bottom: 1px solid darken($gray, 10%);
+    }
+}
+.dashboard-section {
+   text-align: center;
+   overflow: hidden;
+   position: relative;
+   z-index: 1;
+   header {
       position: relative;
-      z-index: 1;
-      h2 {
-         position: relative;
-         color: $purple;
-         text-transform: uppercase;
-         font-size: 2.5em;
-         width: 6em;
-         margin: 0 auto 0.5em;
-         &:before,
-         &:after {
-            content: '';
-            width: 170%;
-            height: 0.05em;
-            background: $purple;
-            position: absolute;
-            left: 6.5em;
-            top: 0.7em;
-         }
-         &:after {
-            right: 6.5em;
-            left: auto;
-         }
-         .icon {
-            margin-top: -0.15em;
-            font-size: 1.25em;
-            vertical-align: middle;
-         }
+      margin: 0 auto 0.5em;
+      &:before,
+      &:after {
+         content: '';
+         width: 170%;
+         height: 0.05em;
+         background: $purple;
+         position: absolute;
+         left: 6.5em;
+         top: 50%;
+         z-index: 1;
       }
+      &:after {
+         right: 6.5em;
+         left: auto;
+      }
+      > div {
+          display: inline-block;
+          padding: 0 1.5em;
+          background: #fff;
+          position: relative;
+          z-index: 3;
+          img {
+                margin-top: 0.15em;
+                width: 3em;
+                vertical-align: top;
+          }
+      }
+      h2 {
+          color: $purple;
+          text-transform: uppercase;
+          font-size: 2.5em;
+          display: inline-block;
+          margin: 0;
+      }
+   }
+   &.support {
+      border-bottom: 2px solid $purple;
    }
    .three-list {
       color: white;
@@ -384,17 +279,17 @@
             font-size: 1.5em;
          }
       }
-      .icon {
-         font-size: 4.5em;
+      img {
+         width: 5em;
          display: block;
          margin: 0 auto;
-         fill: $purple;
          @include bp(50) {
-            font-size: 7em;
+            width: 9em;
          }
       }
       a {
          display: block;
+
          &:hover {
             text-decoration: none;
             h3,
@@ -405,12 +300,65 @@
          }
       }
    }
-   .support {
-      border-bottom: 2px solid $purple;
-   }
-   .entry-content {
-      padding: 2em 0;
+
+}
+.dashboard-archive {
+    a {
+        color: $purple;
+    }
+}
+.dashboard-search {
+   float: left;
+   .search-form {
+      display: inline-block;
       position: relative;
-      z-index: 1;
+      margin: 0;
+      input {
+         border: none;
+         padding: 0.5em;
+         background: transparent;
+         color: white;
+      }
+      input[type="search"] {
+         width: 20em;
+         margin-left: 2em;
+      }
+      input[type="submit"] {
+         position: absolute;
+         left: 0;
+         top: 0;
+         background: url(_i/search.png) center center no-repeat;
+         background-size: 2em;
+         width: 2em;
+         height: 2em;
+         text-indent: -9999px;
+      }
+      label {
+         display: none;
+         @include bp(50) {
+            display: inline;
+         }
+      }
+      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+         color: #fff;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+         color: #fff;
+         opacity:  1;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+         color: #fff;
+         opacity:  1;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+         color: #fff;
+      }
    }
+}
+
+.search-trigger {
+   display: inline-block;
+   padding-right: 0.5em;
+   vertical-align: middle;
+   font-size: 1.5em;
 }

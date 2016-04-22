@@ -9,10 +9,11 @@
 ?>
 	</div>
 		<footer id="footer" role="contentinfo">
-			
+
 		</footer><!-- #colophon -->
 	</div><!-- site-content -->
 </div><!--site-->
+</div><!--site-main-->
 <?php wp_footer(); ?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/_js/famnetwork-min.js"></script>

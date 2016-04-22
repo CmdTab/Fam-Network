@@ -81,7 +81,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 53332,
+		"initialSize": 76640,
 		"inputAbbreviatedPath": "\/_i\/dash-bg.jpg",
 		"outputAbbreviatedPath": "\/_i\/dash-bg.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -220,6 +220,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_i\/locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8843,
+		"inputAbbreviatedPath": "\/_i\/locked.png",
+		"outputAbbreviatedPath": "\/_i\/locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_i\/mastercard.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -341,6 +352,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_i\/search.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4286,
+		"inputAbbreviatedPath": "\/_i\/search.png",
+		"outputAbbreviatedPath": "\/_i\/search.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_i\/strong-marriages-box.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -431,7 +453,7 @@
 		},
 	"\/_js\/famnetwork-min.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_js\/famnetwork-min.js",
 		"outputAbbreviatedPath": "\/_js\/min\/famnetwork-min-min.js",
@@ -445,11 +467,11 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_js\/famnetwork.js",
-		"outputAbbreviatedPath": "\/_js\/famnetwork-min.js",
+		"outputAbbreviatedPath": "\/_js\/min\/famnetwork-min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
+		"syntaxCheckerStyle": 1
 		},
 	"\/_js\/html5shiv.js": {
 		"fileType": 64,
@@ -486,7 +508,7 @@
 		},
 	"\/_js\/mediaelement-and-player.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_js\/mediaelement-and-player.js",
 		"outputAbbreviatedPath": "\/_js\/min\/mediaelement-and-player-min.js",
@@ -730,6 +752,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_scss\/layout.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_scss\/layout.scss",
+		"outputAbbreviatedPath": "\/css\/layout.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_scss\/membership.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -885,6 +923,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/content-month.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/content-month.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/content-none.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -935,15 +982,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/content.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/css\/base.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/base.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1517,6 +1555,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/taxonomy-month.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/taxonomy-month.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/woocommerce\/archive-product.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -2051,40 +2098,8 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Tristan Swire",
+"lastSavedByUser": "Josh Rives",
 "manualImportLinks": {
-	"\/_js\/famnetwork.js": [
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_js\/jquery.waypoints.js",
-			"position": 0,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_js\/mediaelement-and-player.js",
-			"position": 1,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_js\/bootstrap-carousel.js",
-			"position": 2,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_js\/bootstrap.js",
-			"position": 3,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_js\/jquery.matchHeight.js",
-			"position": 4,
-			"type": 0
-			}
-		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",

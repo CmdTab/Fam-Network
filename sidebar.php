@@ -20,12 +20,22 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>shop" class="dashboard-shop back">Back to Dashboard</a>
 
+	<?php if( have_rows('product_ad', 'option') ): ?>
 	<div class="product-feature">
-		<img src="http://placehold.it/100x150" />
-		<h4>Should I Just Smash My Kids Phone</h4>
-		<p>by Doug Fields</p>
-		<p>$14.99</p>
+		<?php while( have_rows('product_ad', 'option') ): the_row(); ?>
+		<div class="side-product">
+			<a href = "<?php the_sub_field('ad_url'); ?>">
+				<?php
+					$image = get_sub_field('ad_image');
+					if( !empty($image) ):
+				?>
+				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				<?php endif; ?>
+			</a>
+		</div>
+		<?php endwhile; ?>
 	</div>
+	<?php endif; ?>
 
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->

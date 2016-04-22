@@ -119,15 +119,6 @@ h4 {
 	fill: currentColor;
 }
 
-/* =======================================================================================
-Example showing how to change the color/size of the icons:
-.icon-name {
-	font-size: 32px; // works because "width" & "height" were set using em units
-	color: red; // works for single-colored icons, because "fill" was set to "currentColor"
-}
-======================================================================================== */
-
-
 @import "modules";
 @import "header";
 @import "flip-card";
@@ -146,3 +137,4 @@ Example showing how to change the color/size of the icons:
 @import "dashboard";
 @import "dashboard-single";
 @import "sidebar";
+@import "layout";

@@ -8,10 +8,6 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-			<div class="entry-meta">
-				<?php start_posted_on(); ?>
-			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
@@ -32,7 +28,7 @@
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php start_entry_footer(); ?>
+			<strong>TYPE: </strong><?php echo get_the_term_list( $post->ID, 'type', '', ', '); ?>
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-## -->
 </div>

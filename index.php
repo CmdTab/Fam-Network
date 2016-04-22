@@ -11,33 +11,34 @@
  * @package WordPress Start
  */
 
-get_header(); ?>
+ ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area page-dashboard">
+		<?php get_sidebar('dashboard'); ?>
+		<main id="main" class="site-main dashboard-main" role="main">
+			<?php get_header('dashboard'); ?>
+			<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+				<?php endwhile; ?>
 
-			<?php endwhile; ?>
+				<?php start_paging_nav(); ?>
 
-			<?php start_paging_nav(); ?>
+			<?php else : ?>
 
-		<?php else : ?>
+				<?php get_template_part( 'content', 'none' ); ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
+			<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

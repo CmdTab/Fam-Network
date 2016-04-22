@@ -50,7 +50,7 @@
 		del .amount::before {
 		  	content: 'Regular Price: ';
 		}
-		 
+
 		ins .amount::before {
 		  	content: 'Member:';
 		  	margin-right: 0.25em;
@@ -64,7 +64,6 @@
 		border-radius: 0;
 		padding: 1.5em;
 		margin-top: 0;
-		display: block;
 		&:hover {
 			background-color: $orange;
 			color: #fff;
@@ -79,4 +78,44 @@
 			display: block;
 		}
 	}
+}
+.membership-end-date {
+	display: none;
+}
+ul.my-membership-tabs {
+	padding: 0;
+	margin: 1em 0;
+	list-style: none;
+	border-bottom: 1px solid $dark-gray;
+	li {
+		display: inline-block;
+		margin-right: 0.5em !important;
+		position: relative;
+		top: 1px;
+		&:after {
+			display: none !important;
+		}
+		a,
+		span {
+			display: inline-block;
+			padding: 0.5em 1em;
+
+		}
+		span {
+			border: 1px solid $dark-gray;
+			border-bottom: 1px solid $gray;
+		}
+		a {
+			border: 1px solid transparent;
+			border-bottom: 0;
+			&:hover {
+				border: 1px solid darken($gray, 10%);
+				border-bottom: 0;
+				text-decoration: none;
+			}
+		}
+	}
+}
+.woocommerce_account_subscriptions {
+	display: none;
 }

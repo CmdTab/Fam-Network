@@ -7,15 +7,11 @@
  * @package WordPress Start
  */
 
-?>
-	
-	<section id="primary" class="content-area page-dashboard">
+ get_header('dashboard'); ?>
 
-		<?php get_sidebar('dashboard'); ?>
+ 	<div id="primary" class="page-dashboard page-sidebar group">
 
-		<main id="main" class="site-main dashboard-main" role="main">
-
-			<?php get_header('dashboard'); ?>
+ 		<main id="main" role="main">
 
 			<?php if ( have_posts() ) : ?>
 

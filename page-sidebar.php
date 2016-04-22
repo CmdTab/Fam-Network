@@ -10,15 +10,11 @@
  * @package WordPress Start
  */
 
-?>
+ get_header('dashboard'); ?>
 
-	<div id="primary" class="content-area page-dashboard page-sidebar group">
-		
-		<?php get_sidebar(); ?>
-		
-		<main id="main" class="site-main dashboard-main" role="main">
+ 	<div id="primary" class="content-area page-dashboard page-sidebar group">
 
-			<?php get_header('dashboard'); ?>
+ 		<main id="main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 

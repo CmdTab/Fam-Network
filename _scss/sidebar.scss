@@ -1,20 +1,8 @@
 .page-sidebar {
 	width: 100%;
-	background: darken($gray,10%);
-	main {
-		width: 75%;
-		float: left;
-		.dashboard-header {
-			border-left: 1px solid white;
-			background: darken($gray,10%);
-			input {
-				color: $dark-gray;
-			}
-		}
-	}
 	.default-sidebar {
 		display: none;
-		background: $dark-gray;
+		//background: $dark-gray;
 		padding: 0 0 1em;
 		@include bp(44) {
 			display: block;
@@ -49,9 +37,39 @@
 		   }
 		}
 	}
-	.product-feature {
-		background: lighten($purple,7.5%);
-		color: white;
-		width: 100%;
+
+}
+.product-feature {
+	width: 14em;
+	max-width: 85%;
+	margin: 0 auto;
+}
+.side-product {
+	margin-bottom: 1em;
+	a {
+		display: block;
+	}
+}
+.recent-sidebar {
+	margin: 0 0 1em;
+	h2 {
+	   font-size: 1.5em;
+	   margin-left: -1.15em;
+	   text-transform: uppercase;
+	   font-weight: 500;
+	   text-align: center;
+	   margin: 0 0 0.25em;
+	   color: #fff;
+	}
+	ul {
+       margin: 0 auto;
+       padding: 0;
+	   list-style: square;
+       font-family: 'Oswald', sans-serif;
+       margin-left: 35%;
+	   color: #fff;
+    }
+	a {
+		color: #fff;
 	}
 }
