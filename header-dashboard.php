@@ -32,7 +32,6 @@
     	<a href="<?php echo esc_url( home_url( '/' ) ); ?>my-account" class="logo" rel="home">
     		<img src ="<?php bloginfo('template_directory'); ?>/_i/fam-network-logo.png">
     	</a>
-
     	<a href="<?php echo esc_url( home_url( '/' ) ); ?>shop" class="dashboard-shop">Shop</a>
 
     	<div class="dashboard-history">
@@ -80,7 +79,8 @@
     					'taxonomy' => 'month',
     					'hide_empty' => true,
     					'orderby' => 'term_id',
-                        'order' => 'DESC'
+                        'order' => 'DESC',
+                        'number' => 1
     				) );
     				if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
     			?>
@@ -89,11 +89,30 @@
     				<li>
     					<a href = "<?php echo get_term_link($term); ?>"><?php include('svg/icon-plus-circle.php') ?><?php echo $term->name; ?></a>
     				</li>
+                    <?php $exclude[] = $term->term_id; ?>
     				<?php endforeach; ?>
     			</ul>
     			<?php endif; ?>
 
     			<a href="#" class="load-history">(Load More)</a>
+                <?php
+    				$terms = get_terms( array(
+    					'taxonomy' => 'month',
+    					'hide_empty' => true,
+    					'orderby' => 'term_id',
+                        'order' => 'DESC',
+                        'exclude' => $exclude
+    				) );
+    				if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
+    			?>
+    			<ul class="expanded-history">
+    				<?php foreach ( $terms as $term ) : ?>
+    				<li>
+    					<a href = "<?php echo get_term_link($term); ?>"><?php include('svg/icon-plus-circle.php') ?><?php echo $term->name; ?></a>
+    				</li>
+    				<?php endforeach; ?>
+    			</ul>
+    			<?php endif; ?>
     		</div>
             <?php endif; ?>
     		<?php if( have_rows('product_ad', 'option') ): ?>
@@ -147,5 +166,4 @@
     			</div>
     		</div>
     	</header><!-- #masthead -->
-
     	<div id="content" class="backend-content">

@@ -19,13 +19,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
- ?>
-<section id="primary" class="content-area page-dashboard group">
-	<?php get_sidebar('dashboard'); ?>
-	<main id="main" class="site-main dashboard-main" role="main">
+get_header('shop'); ?>
 
-		<?php get_header('dashboard'); ?>
-<div class="products-page">
+   <div id="primary" class="page-dashboard group">
+
+	   <main id="main" role="main">
+<div class="products-page wrap">
 
 	<?php
 		/**

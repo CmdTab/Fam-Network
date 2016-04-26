@@ -1,11 +1,5 @@
 .products-page {
-	max-width: 80em;
-	margin: 0 auto;
-	width: 90%;
 	padding: 4em 0;
-	@include bp(80) {
-		width: 100%;
-	}
 	.page-title {
 		color: $purple;
 	}

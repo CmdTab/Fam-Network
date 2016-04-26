@@ -260,7 +260,19 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 if( function_exists('acf_add_options_page') ) {
-
 	acf_add_options_page();
-
 }
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+function wcs_woo_remove_reviews_tab($tabs) {
+ unset($tabs['reviews']);
+ return $tabs;
+}
+/**
+ * Print the customer avatar in My Account page, after the welcome message
+ */
+function storefront_myaccount_customer_avatar() {
+    $current_user = wp_get_current_user();
+
+    echo '<div class="myaccount_avatar">' . get_avatar( $current_user->user_email, 72, '', $current_user->display_name ) . '</div>';
+}
+add_action( 'woocommerce_before_my_account', 'storefront_myaccount_customer_avatar', 5 );

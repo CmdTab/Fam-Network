@@ -97,7 +97,12 @@ function accountTrigger() {
 function audioPlayer() {
 	jQuery('video,audio').mediaelementplayer();
 }
-
+function expandedHistory() {
+	jQuery('.load-history').click(function() {
+		jQuery('.expanded-history').slideToggle();
+		return false;
+	});
+}
 jQuery(document).ready(function() {
 	var vw = jQuery(window).width();
 	if (vw > 800) {
@@ -115,4 +120,5 @@ jQuery(document).ready(function() {
 	navToggle();
 	accessPopup();
 	matchProductheight();
+	expandedHistory();
 });
