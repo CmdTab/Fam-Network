@@ -1,5 +1,10 @@
 .products-page {
 	padding: 4em 0;
+	width: 90%;
+	margin: 0 auto;
+	@include bp(67.5) {
+		width: 100%;
+	}
 	.page-title {
 		color: $purple;
 	}
@@ -37,11 +42,13 @@
 				del,
 				.amount {
 					color: $text;
+					
 				}
 				ins {
 					color: $orange;
 					.amount {
 						color: $orange;
+						
 					}
 				}
 			}
@@ -96,6 +103,56 @@
 		del,
 		ins {
 			display: block;
+		}
+	}
+}
+.term-strong-marriages {
+	.sm-btn {
+		background: $purple;
+		border-color: $purple;
+	}
+}
+.term-confident-parents {
+	.cp-btn {
+		background: $purple;
+		border-color: $purple;
+	}
+}
+.term-empowered-kids {
+	.ek-btn {
+		background: $purple;
+		border-color: $purple;
+	}
+}
+.term-healthy-leaders {
+	.hl-btn {
+		background: $purple;
+		border-color: $purple;
+	}
+}
+
+.product-filter {
+	padding-bottom: 2em;
+	h3 {
+		display: block;
+		margin-right: 1em;
+		@include bp(50) {
+			display: inline;
+		}
+	}
+	a {
+		width: 49%;
+		float: left;
+		margin: 0 2% 0.5em 0;
+		display: block;
+		&:nth-of-type(2n+2) {
+			margin-right: 0;
+		}
+		@include bp(50) {
+			display: inline;
+			width: 100%;
+			float: none;
+			margin: 0 auto;
 		}
 	}
 }

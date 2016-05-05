@@ -86,8 +86,8 @@ get_header('home'); ?>
 
 					<?php endif; ?>
 
-					<span class="orange-btn btn register-trigger"><?php the_field('left_section_button_left'); ?></span>
-					<a href = "#premium" class="clear-btn btn"><?php the_field('left_section_button_right'); ?></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>free-membership?add-to-cart=7289" class="orange-btn btn"><?php the_field('left_section_button_left'); ?></a>
+					<a href="#premium" class="clear-btn btn"><?php the_field('left_section_button_right'); ?></a>
 				</div>
 			</div>
 			<div class="half side-box group" style="background: url(<?php the_field('right_section_background'); ?>) center center no-repeat; background-size: cover;">
@@ -267,7 +267,8 @@ get_header('home'); ?>
 						<h1><?php the_field('premium_header'); ?></h1>
 						<hr />
 						<h4><?php the_field('prem_sub_heading'); ?></h4>
-						<span class="orange-btn btn top register-trigger"><?php the_field('prem_purchase_btn'); ?></span>
+
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>premium-membership?add-to-cart=7324" class="orange-btn btn top"><?php the_field('prem_purchase_btn'); ?></span>
 						<a href = "#free" class="clear-btn btn top"><?php the_field('free_section_btn'); ?></a>
 					</div>
 					<div class="two-third">
@@ -283,7 +284,7 @@ get_header('home'); ?>
 						<?php endif; ?>
 					</div>
 				</div>
-				<a href="#" class="orange-btn btn bottom register-trigger"><?php the_field('prem_purchase_btn'); ?></a>
+				<a href="#" class="orange-btn btn bottom"><?php the_field('prem_purchase_btn'); ?></a>
 				<a href="#free" class="clear-btn btn bottom"><?php the_field('free_section_btn'); ?></a>
 			</div>
 			<div class="upgrade-bottom">
@@ -442,7 +443,7 @@ get_header('home'); ?>
 							<?php the_field('first_tab_content'); ?>
 						</div>
 						<div class="half">
-							<a href="<?php the_field('first_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('first_tab_button'); ?></a>
+							<a href="<?php the_field('first_tab_url'); ?>" class="white-btn btn"><?php the_field('first_tab_button'); ?></a>
 						</div>
 					</div>
 				</div>
@@ -458,7 +459,7 @@ get_header('home'); ?>
 							<?php the_field('second_tab_content'); ?>
 						</div>
 						<div class="half">
-							<a href="<?php the_field('second_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('second_tab_button'); ?></a>
+							<a href="<?php the_field('second_tab_url'); ?>" class="white-btn btn"><?php the_field('second_tab_button'); ?></a>
 						</div>
 					</div>
 				</div>
@@ -474,7 +475,7 @@ get_header('home'); ?>
 							<?php the_field('third_tab_content'); ?>
 						</div>
 						<div class="half">
-							<a href="<?php the_field('third_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('third_tab_button'); ?></a>
+							<a href="<?php the_field('third_tab_url'); ?>" class="white-btn btn"><?php the_field('third_tab_button'); ?></a>
 						</div>
 					</div>
 				</div>
@@ -490,7 +491,7 @@ get_header('home'); ?>
 							<?php the_field('fourth_tab_content'); ?>
 						</div>
 						<div class="half">
-							<a href="<?php the_field('fourth_tab_url'); ?>" class="white-btn btn register-trigger"><?php the_field('fourth_tab_button'); ?></a>
+							<a href="<?php the_field('fourth_tab_url'); ?>" class="white-btn btn"><?php the_field('fourth_tab_button'); ?></a>
 						</div>
 					</div>
 				</div>

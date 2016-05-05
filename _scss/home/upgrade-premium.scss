@@ -24,6 +24,7 @@
 				display: inline-block;
 				&:first-of-type {
 					margin-bottom: 0.5em;
+				   margin-right: 0.5em;
 				}
 			}
 		}
@@ -97,6 +98,10 @@
 			}
 			li {
 				position: relative;
+				a {
+					color: white;
+					text-decoration: underline;
+				}
 			}
 			span {
 				margin-left: 2.5em;

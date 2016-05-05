@@ -84,11 +84,12 @@ $(function() {
   });
 });
 function matchProductheight() {
-	jQuery('.products li').matchHeight();
+	jQuery('.products li a').matchHeight();
 	jQuery('.products li img').matchHeight();
 	jQuery('.products li h3').matchHeight();
 	jQuery('.products li .price').matchHeight();
 }
+
 function accountTrigger() {
 	jQuery('.username').click(function() {
 		jQuery('.account-info').slideToggle();
@@ -99,9 +100,22 @@ function audioPlayer() {
 }
 function expandedHistory() {
 	jQuery('.load-history').click(function() {
-		jQuery('.expanded-history').slideToggle();
+		if(jQuery(this).hasClass('toggle')) {
+			jQuery('.expanded-history').slideUp();
+			jQuery(this).html('(Load More)');
+			jQuery(this).removeClass('toggle');
+		} else {
+			jQuery('.expanded-history').slideDown();
+			jQuery(this).addClass('toggle');
+			jQuery(this).html('(Close)');
+		}
 		return false;
 	});
+}
+function downGrade() {
+	jQuery('.load-history').load(function() {
+		
+	}
 }
 jQuery(document).ready(function() {
 	var vw = jQuery(window).width();

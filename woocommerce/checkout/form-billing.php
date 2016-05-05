@@ -27,6 +27,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<h3><?php _e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
 
+	<?php elseif ( is_page( 'free-membership' ) ): ?>
+
+		<h3><?php _e( 'Details', 'woocommerce' ); ?></h3>
+
 	<?php else : ?>
 
 		<h3><?php _e( 'Billing Details', 'woocommerce' ); ?></h3>

@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-	<div class="single-product-container">
+	<div class="single-product-container products-page">
 		<?php
 			/**
 			 * woocommerce_before_main_content hook.

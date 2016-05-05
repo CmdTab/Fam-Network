@@ -65,6 +65,13 @@
             </a>
             <nav id="famnetwork-nav">
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false) ); ?>
+                <?php
+					if ( is_user_logged_in() ) {
+					    echo '<a href="http://famnetwork.homeword.com/my-account" class="login-btn">Dashboard</a>';
+					} else {
+						echo '<a href="'. wp_logout_url('http://famnetwork.homeword.com/my-account') .'" class="login-btn">Login</a>';
+					}
+				?>	
                 <?php global $woocommerce; ?>
                 <!-- <a class="fam-cart" href="<?php // echo $woocommerce->cart->get_cart_url(); ?>" title="<?php // _e('View your shopping cart', 'woothemes'); ?>">
                     <?php // if($woocommerce->cart->cart_contents_count > 0): ?>
@@ -111,7 +118,7 @@
 			</div> <!-- Carousel -->
 			<!-- <h1><?php // the_field('banner_header_text'); ?></h1>
 			<h4><?php // the_field('banner_sub_header'); ?></h4> -->
-			<span class="btn clear-btn register-trigger"><?php the_field('left_button_text'); ?></span>
+			<a href="#free" class="btn clear-btn"><?php the_field('left_button_text'); ?></span>
 			<a href="#content" class="btn white-btn learn-more"><?php the_field('right_button_text'); ?></a>
 		</div>
 	</header><!-- #masthead -->

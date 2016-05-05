@@ -41,6 +41,9 @@
                     $current_tax = get_the_terms( $post->ID, 'type' );
                     $TypeTax = $current_tax[0]->slug;
                     $TypeName = $current_tax[0]->name;
+                    echo '<a href="';
+                    echo esc_url( home_url( '/my-account' ) );
+                    echo '" class="dashboard-shop back">Back to Dashboard</a>';
                     $args = array(
                         'numberposts' => '5',
                         'post_type' => $postType,
@@ -55,14 +58,14 @@
                     );
                 	$recent_posts = wp_get_recent_posts( $args );
                     if(!empty($recent_posts)) {
-                        echo '<div class="recent-sidebar">';
-                        echo '<h2>More ' . $TypeName . '</h2>';
-                        echo '<ul>';
-                        foreach( $recent_posts as $recent ){
-                            echo '<li><a href="' . get_permalink($recent["ID"]) . '">' . $recent["post_title"].'</a> </li> ';
-                        }
-                        echo '</ul>';
-                        echo '</div>';
+                        //echo '<div class="recent-sidebar">';
+                        //echo '<h2>More ' . $TypeName . '</h2>';
+                        //echo '<ul>';
+                        //foreach( $recent_posts as $recent ){
+                            //echo '<li><a href="' . get_permalink($recent["ID"]) . '">' . $recent["//post_title"].'</a> </li> ';
+                        //}
+                        //echo '</ul>';
+                        //echo '</div>';
                     }
             ?>
             <?php else: ?>
@@ -144,12 +147,15 @@
     			<div class="dashboard-nav">
     				<div>
     					<?php if (!wc_memberships_is_user_active_member( $user_id, 'premium-membership' )): ?>
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>premium-membership?add-to-cart=137" class="light-teal-btn">Upgrade to Premium</a>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>premium-membership?add-to-cart=7324" class="light-teal-btn">Upgrade to Premium</a>
                         <?php endif; ?>
                         <a class="cart-contents clear-btn" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php include('svg/icon-user.php'); ?><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
     				</div>
-    				<span><?php include('svg/icon-user.php'); ?></span>
-    				<a href="#" class="username"><?php echo $current_user->user_firstname; ?></a>
+    				
+    				<a href="#" class="username">
+                        <span><?php include('svg/icon-user.php'); ?></span>
+                        <?php echo $current_user->user_firstname; ?>
+                    </a>
     			</div>
     			<div class="account-info group">
     				<div class="third first">
@@ -158,10 +164,12 @@
     				<div class="two-third">
     					<h3><?php echo $current_user->user_firstname; ?></h3>
     					<span class="email"><?php echo $current_user->user_email; ?></span>
-    					<div class="buttons">
-    						<a href="#account" class="clear-btn">Account Info</a>
-    						<a href="<?php echo wp_logout_url( home_url() ); ?>" class="clear-btn">Sign Out</a>
-    					</div>
+                        <div class="buttons">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>my-account/#account" class="clear-btn">Account Info</a>
+                            <a href="<?php echo wp_logout_url( home_url() ); ?>" class="clear-btn ">Sign Out</a>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>shop" class="clear-btn mobile-btn">Shop</a>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>my-account" class="clear-btn mobile-btn">My Dashboard</a>
+                        </div>
     				</div>
     			</div>
     		</div>

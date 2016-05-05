@@ -68,6 +68,9 @@
         background-color: darken($light-teal,15%);
         color: #fff;
     }
+    &.back {
+        background-color: lighten($purple,10%);
+    }
 }
 .dashboard-full {
     width: 100%;
@@ -89,6 +92,8 @@
     position: relative;
     .dashboard-nav {
         float: right;
+        width: 50%;
+        text-align: right;
         div:first-of-type {
             display: none;
             @include bp(50) {
@@ -113,28 +118,38 @@
             font-size: 2em;
             vertical-align: middle;
             margin: 0 0.25em;
+            transition: all 250ms ease-in-out;
         }
         .username {
+            display: block;
             color: white;
             font-weight: 700;
             font-size: 1.15em;
             font-family: 'Oswald', sans-serif;
-            transition: all 250ms ease;
+            transition: all 250ms ease-in-out;
             &:hover {
                 color: $light-teal;
+                .icon {
+                    color: $light-teal;
+                }
+            }
+            @include bp(44) {
+                display: inline-block;
             }
         }
     }
     .account-info {
         display: none;
         position: absolute;
-        top: 4.25em;
-        right: 0.4em;
+        top: 4.5em;
+        right: 0;
+        left: 0;
         background-color: $light-teal;
         color: white;
         padding: 1em;
-        min-width: 26em;
         z-index: 10;
+        width: 100%;
+        margin: 0 auto;
         &:after {
             content: '';
             top: -1em;
@@ -146,6 +161,11 @@
             border-right: 1.5em solid transparent;
             border-bottom: 1.5em solid $light-teal;
         }
+        @include bp(44) {
+            right: 0.4em;
+            left: auto;
+            width: 32em;
+        }
         .icon {
             font-size: 3em;
         }
@@ -156,26 +176,43 @@
             display: block;
             margin-top: 1em;
             a {
-                display: inline-block;
+                display: block;
+                margin-bottom: 0.5em;
+                @include bp(44) {
+                    display: inline-block;
+                    width: 12em;
+                }
+                @include bp(44) {
+                    a:first-child {
+                        margin-right: 1em;
+                    }
+                }
+            }
+            .mobile-btn {
+                @include bp(44) {
+                    display: none;
+                }
             }
         }
         .two-third {
-            width: 80%;
-            float: left;
+            width: 100%;
+            @include bp(30) {
+                width: 80%;
+                float: left;
+            }
             a {
                 color: white;
                 text-decoration: none;
                 font-size: 0.875em;
             }
-            .buttons {
-                a:first-child {
-                    margin-right: 1em;
-                }
-            }
         }
         .third {
-            width: 15%;
-            float: left;
+            display: none;
+            @include bp(30) {
+                display: block;
+                width: 15%;
+                float: left;
+            }
         }
     }
 }
@@ -210,6 +247,9 @@
     .entry-header {
         margin-bottom: 0.75em;
         border-bottom: 1px solid darken($gray, 10%);
+    }
+    .entry-footer {
+        padding: 0;
     }
 }
 .dashboard-section {
@@ -258,10 +298,10 @@
     &.support {
         border-bottom: 2px solid $purple;
     }
-    .three-list {
+    .dashboard-list {
         color: white;
         padding: 2em 0;
-        li {
+        > li {
             padding: 0 0 2em;
             width: 50%;
             float: left;
@@ -271,9 +311,6 @@
             }
             @include bp(50) {
                 width: 33.333%;
-                &:nth-child(4n) {
-                    clear: left;
-                }
             }
         }
         h3 {
@@ -296,7 +333,7 @@
         }
         a {
             display: block;
-
+            text-decoration: none;
             &:hover {
                 text-decoration: none;
                 h3,
@@ -316,8 +353,10 @@
 }
 .dashboard-search {
     float: left;
+    width: 50%;
+    overflow: hidden;
     .search-form {
-        display: inline-block;
+        display: block;
         position: relative;
         margin: 0;
         input {
@@ -341,10 +380,7 @@
             text-indent: -9999px;
         }
         label {
-            display: none;
-            @include bp(50) {
-                display: inline;
-            }
+            display: inline;
         }
         ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
             color: #fff;
@@ -371,4 +407,7 @@
 }
 .expanded-history {
     display: none;
+}
+.back-dash {
+    padding: 0.75em;
 }

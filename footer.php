@@ -14,7 +14,7 @@
 					<?php wp_nav_menu( array( 'menu' => 'footer links', 'container' => false, ) ); ?>
 				</li>
 				<li>
-					<?php $contact = get_field('footer_contact_form'); ?>
+					<?php $contact = get_field('footer_contact_form' , 'option'); ?>
 					<?php gravity_form( $contact, false, false, false, '', false ); ?>
 				</li>
 				<li>

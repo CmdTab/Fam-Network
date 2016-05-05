@@ -34,7 +34,7 @@
 			max-width: 10em;
 		}
 		#famnetwork-nav {
-			padding-top: 0.75em;
+			padding: 0.5em 0;
 		}
 	}
 }
@@ -73,7 +73,7 @@
 	@include bp(44) {
 		display: block;
 		float: right;
-		padding: 0.875em 0 0 0;
+		padding: 0.8em 0 0 0;
 	}
 	ul {
 		list-style: none;
@@ -99,14 +99,25 @@
 		a {
 			color: $gray;
 			padding: 0.75em 1em 0.75em 0;
+			transition: all 250ms ease-in-out;
 			@include bp(44) {
 				padding: 0;
 			}
 			&:hover {
 				text-decoration: none;
-				color: darken($gray, 15%);
+				color: lighten($purple,20%);
 			}
 		}
+	}
+	.login-btn {
+	   background: darken($orange, 10%);
+	   padding: 0.5em 1em;
+	   border-radius: 0.5em;
+	   margin: -0.5em 0 0 1.75em;
+	   &:hover {
+	   	background: darken($orange, 20%);
+	   	color: white;
+	   }
 	}
 }
 .fam-cart {
@@ -121,7 +132,7 @@
 		text-decoration: none;
 	}
 	@include bp(44) {
-		margin: 0 0 0 1.5em;
+		margin: 0.5em 0 0 1.5em;
 		padding: 0 0 0 0.5em;
 		height: 1.75em;
 		width: 2em;

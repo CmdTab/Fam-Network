@@ -18,7 +18,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>shop" class="dashboard-shop">Shop</a>
 
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>shop" class="dashboard-shop back">Back to Dashboard</a>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>my-account" class="dashboard-shop back">Back to Dashboard</a>
 
 	<?php if( have_rows('product_ad', 'option') ): ?>
 	<div class="product-feature">

@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="col2-set" id="customer_login">
 
-	<div class="col-1">
+	<!-- <div class="col-1"> -->
 
 <?php endif; ?>
 
@@ -59,6 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</p>
 			<p class="lost_password">
 				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>free-membership">Need an account?</a>
 			</p>
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
@@ -67,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
-	</div>
+	<!-- </div> -->
 
 	
 

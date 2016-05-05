@@ -28,7 +28,15 @@
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<strong>TYPE: </strong><?php echo get_the_term_list( $post->ID, 'type', '', ', '); ?>
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() ) :
+					comments_template();
+				endif;
+			?>
+			<div class="post-type">
+				<strong>TYPE: </strong><?php echo get_the_term_list( $post->ID, 'type', '', ', '); ?>
+			</div>
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-## -->
 </div>

@@ -38,6 +38,9 @@
 	.form-coupon {
 		display: none;
 	}
+	.product_meta {
+		padding-top: 1em;
+	}
 	.product_title {
 		margin-bottom: 0.25em;
 		font-size: 2.25em;
@@ -181,8 +184,6 @@
 		}
 		.woocommerce-checkout-payment {
 			padding: 2em 0;
-			background-color: rgba(94,54,106,0.25) !important;
-			border: 1px solid $purple;
 			#place_order {
 				float: none !important;
 				display: block;

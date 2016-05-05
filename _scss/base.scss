@@ -24,7 +24,6 @@ body {
 		font-size: 0.9375em;
 	}
 }
-
 a {
 	color: $blue;
 	text-decoration: none;
@@ -56,7 +55,8 @@ a {
 		border-color: $purple;
 	}
 }
-.purple-btn {
+.purple-btn,
+input[type="submit"] {
 	@include button($purple, #fff);
 	border: 1px solid $purple;
 	&:hover {
@@ -71,7 +71,7 @@ a {
 	&:hover {
 		background-color: $purple;
 		color: #fff;
-		border-color: $teal;
+		border-color: $purple;
 	}
 }
 .light-teal-btn {
@@ -124,7 +124,6 @@ h4 {
 @import "flip-card";
 @import "carousel";
 @import "wordpress";
-@import "woocommerce";
 @import "home/resources";
 @import "home/get-connected";
 @import "home/join-free";
@@ -132,9 +131,12 @@ h4 {
 @import "home/upgrade-premium";
 @import "footer";
 @import "forms";
+@import "woocommerce";
+@import "woocommerce-cart";
 @import "products";
 @import "membership";
 @import "dashboard";
 @import "dashboard-single";
 @import "sidebar";
 @import "layout";
+@import "forums";

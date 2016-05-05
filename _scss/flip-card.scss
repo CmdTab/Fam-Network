@@ -59,7 +59,7 @@
 	.back {
 		transform: rotateY(180deg);
 	}
-	@include bp(50) {
+	@include bp(67.5) {
 		.flip-container.hover {
 			.front {
 				display: none;
@@ -158,7 +158,7 @@
 	right: 1.5em;
 	color: white;
 	z-index: 20;
-	@include bp(50) {
+	@include bp(67.5) {
 		display: none;
 	}
 }

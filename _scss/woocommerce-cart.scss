@@ -1,0 +1,119 @@
+.woocommerce {
+	table.shop_table {
+		th,
+		td {
+			border-right: 1px solid $gray !important;
+			padding: 1em 0.75em;
+			&:last-of-type {
+				border-right: none;
+			}
+		}
+		.cart {
+			th,
+			td {
+				text-align: center;
+			}
+			.product-price {
+				del,
+				ins {
+					display: block;
+				}
+				.price {
+					font-size: 0.875em;
+					del,
+					.amount {
+						color: $text;
+						
+					}
+					ins {
+						color: $orange;
+						.amount {
+							color: $orange;
+						}
+					}
+				}
+			}
+		}
+	}
+	table.cart td.actions .coupon .input-text {
+		min-width: 16em;
+		font-size: 1em;
+		padding: 0.7em;
+	}
+	input.button,
+	input.button.alt {
+		@include button($purple, #fff);
+		border: 1px solid $purple;
+		font-size: 1em;
+		padding: 0.75em;
+		border-radius: 0;
+		&:hover {
+			background-color: $orange;
+			color: #fff;
+			border-color: $orange;
+		}
+	}
+	.cart-collaterals {
+		.order-total,
+		.cart-subtotal {
+			th,
+			td {
+				padding: 1em 0.75em;
+			}
+			th:first-child {
+				border-right: 1px solid $gray !important;
+			}
+		}
+		.wc-proceed-to-checkout a.button {
+			@include button($purple, #fff);
+			border: 1px solid $purple;
+			font-size: 1.35em;
+			padding: 0.75em;
+			width: 100%;
+			&:hover {
+				background-color: $orange;
+				color: #fff;
+				border-color: $orange;
+			}
+		}
+	}
+	.woocommerce-shipping-fields {
+		textarea {
+			padding: 0.75em;
+			font-size: 0.875em;
+			min-height: 6em;
+		}
+	}
+	.woocommerce-billing-fields {
+		.woocommerce-invalid input {
+			border: 2px solid $red;
+		}
+		.woocommerce-validated input {
+			border: 2px solid $green;
+		}
+	}
+	.woocommerce-checkout-payment {
+		background: $gray !important;
+		border: 1px solid $gray;
+		border-radius: 0.5em;
+		div.payment_box {
+			background-color: darken($gray,10%) !important;
+			padding: 0;
+			margin: 0;
+			p {
+				margin: 0 0 0.5em;
+			}
+			fieldset{
+				 border: none;
+			}
+			.form-row {
+				input {
+					border: 1px solid $gray;
+				}
+				label {
+					color: $text;
+				}
+			}
+		}
+	}
+}

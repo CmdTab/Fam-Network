@@ -37,12 +37,15 @@
     			<div class="dashboard-nav">
     				<div>
     					<?php if (!wc_memberships_is_user_active_member( $user_id, 'premium-membership' )): ?>
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>premium-membership?add-to-cart=137" class="light-teal-btn">Upgrade to Premium</a>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>premium-membership?add-to-cart=7324" class="light-teal-btn">Upgrade to Premium</a>
                         <?php endif; ?>
                         <a class="cart-contents clear-btn" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php include('svg/icon-user.php'); ?><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
     				</div>
-    				<span><?php include('svg/icon-user.php'); ?></span>
-    				<a href="#" class="username"><?php echo $current_user->user_firstname; ?></a>
+    				
+    				<a href="#" class="username">
+                        <span><?php include('svg/icon-user.php'); ?></span>
+                        <?php echo $current_user->user_firstname; ?>
+                    </a>
     			</div>
     			<div class="account-info group">
     				<div class="third first">
@@ -52,8 +55,10 @@
     					<h3><?php echo $current_user->user_firstname; ?></h3>
     					<span class="email"><?php echo $current_user->user_email; ?></span>
     					<div class="buttons">
-    						<a href="#account" class="clear-btn">Account Info</a>
-    						<a href="<?php echo wp_logout_url( home_url() ); ?>" class="clear-btn">Sign Out</a>
+    						<a href="<?php echo esc_url( home_url( '/' ) ); ?>my-account/#account" class="clear-btn">Account Info</a>
+                            <a href="<?php echo wp_logout_url( home_url() ); ?>" class="clear-btn ">Sign Out</a>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>shop" class="clear-btn mobile-btn">Shop</a>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>my-account" class="clear-btn mobile-btn">My Dashboard</a>
     					</div>
     				</div>
     			</div>

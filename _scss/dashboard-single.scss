@@ -1,19 +1,21 @@
 .dash-single-content {
-   padding: 2em;
-   .entry-header {
-      padding-bottom: 1em;
-      .entry-title {
-         margin-bottom: 0;
-      }
-      .updated {
-         display: none;
-      }
-   }
-   .entry-footer {
-       background: $gray;
-       padding: 1em;
-       margin-top: 1em;
-   }
+    padding: 0;
+    @include bp(44) {
+        padding: 2em;
+    }
+    .entry-header {
+        padding-bottom: 1em;
+        .entry-title {
+            margin-bottom: 0;
+        }
+        .updated {
+            display: none;
+        }
+    }
+    .mejs-container {
+      width: 100% !important;
+      max-width: 20em;
+    }
 }
 
 .archive-header {

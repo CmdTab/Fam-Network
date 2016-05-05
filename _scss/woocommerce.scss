@@ -37,11 +37,23 @@
 			font-size: 1.15em;
 		}
 		del,
-		.amount {
-			color: $text;
-		}
+		.amount,
 		ins {
 			color: $orange;
+			font-weight: 700;
+			&:nth-of-type(2n):before {
+				display: none !important;
+			}
+		}
+		del {
+			color: $text;
+			.amount {
+				color: $text;
+			}
+		}
+		> span.subscription-details {
+			color: $orange;
+			font-weight: 700;
 			text-decoration: none;
 			.amount {
 				color: $orange;
@@ -54,6 +66,7 @@
 		ins .amount::before {
 		  	content: 'Premium Member Price:';
 		  	margin-right: 0.25em;
+		  	display: block;
 		}
 	}
 	button.button,
@@ -77,6 +90,12 @@
 		> span {
 			display: block;
 		}
+	}
+}
+.woocommerce-breadcrumb {
+	a {
+		color: $purple !important;
+		font-weight: 700;
 	}
 }
 .membership-end-date {
@@ -116,6 +135,27 @@ ul.my-membership-tabs {
 		}
 	}
 }
+
 .woocommerce_account_subscriptions {
 	display: none;
+}
+.woocommerce-thankyou-order-received {
+	position: relative;
+	.btn {
+		margin-left: 1em;
+		position: absolute;
+		top: -4.5em;
+		&:hover {
+			border-color: $teal;
+		}
+	}
+}
+.fake-coupon-field {
+	padding: 1em;
+	margin-bottom: 1em;
+	background: $purple;
+	color: white;
+	a {
+		color: $orange;
+	}
 }

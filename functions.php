@@ -276,3 +276,80 @@ function storefront_myaccount_customer_avatar() {
     echo '<div class="myaccount_avatar">' . get_avatar( $current_user->user_email, 72, '', $current_user->display_name ) . '</div>';
 }
 add_action( 'woocommerce_before_my_account', 'storefront_myaccount_customer_avatar', 5 );
+
+/* Clears cart in woocommerce after logout */
+function your_function() {
+    if( function_exists('WC') ){
+        WC()->cart->empty_cart();
+    }
+}
+add_action('wp_logout', 'your_function');
+
+// Display 24 products per page. Goes in functions.php
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
+
+// Hide category from the shop page (for memberships on FAM Network)
+add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+function custom_pre_get_posts_query( $q ) {
+
+	if ( ! $q->is_main_query() ) return;
+	if ( ! $q->is_post_type_archive() ) return;
+	
+	if ( ! is_admin() && is_shop() ) {
+
+		$q->set( 'tax_query', array(array(
+			'taxonomy' => 'product_cat',
+			'field' => 'slug',
+			'terms' => array( 'membership' ), // Don't display products in the knives category on the shop page
+			'operator' => 'NOT IN'
+		)));
+	
+	}
+
+	remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+
+}
+
+function skyverge_show_coupon_js() {
+	wc_enqueue_js( '
+		$( "a.showcoupon" ).parent().hide();
+		
+		$( "body" ).bind( "updated_checkout", function() {
+			$( "#show-coupon-form" ).click( function() {
+				$( ".checkout_coupon" ).show();
+				$( "html, body" ).animate( { scrollTop: 0 }, "slow" );
+  				return false;
+			} );
+		} );
+	');
+}
+add_action( 'woocommerce_before_checkout_form', 'skyverge_show_coupon_js' );
+/**
+ * Show a coupon link above the order details.
+**/
+function skyverge_show_coupon() {
+	echo '<div class="fake-coupon-field"> Have a coupon? <a href="#" id="show-coupon-form">Click here to enter your code</a>.</div>';
+}
+add_action( 'woocommerce_checkout_after_customer_details', 'skyverge_show_coupon' );
+
+// Hook in - change billing field labels
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+     $fields['billing']['billing_company']['label'] = 'Organization Name';
+     return $fields;
+}
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+    if( is_category() ) {
+
+        $title = single_cat_title( '', false );
+
+    }
+
+    return $title;
+
+});

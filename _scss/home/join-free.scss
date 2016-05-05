@@ -170,9 +170,12 @@
 			border-top: 5em solid white;
 			z-index: -1;
 		}
+		@include bp(50) {
+			top: -3em;
+		}
 		.icon {
 			font-size: 2em;
-			color: $purple;
+			fill: $purple;
 			position: absolute;
 		   right: -0.35em;
 		   top: 0.25em;
@@ -187,8 +190,11 @@
 				font-size: 1em;
 			}
 		}
-		.turn-btn:after {
-			border-top-color: rgba(255, 255, 255, 0.5);
+		.turn-btn {
+			top: 0;
+			&:after {
+				border-top-color: rgba(255, 255, 255, 0.5);
+			}
 		}
 	}
 }

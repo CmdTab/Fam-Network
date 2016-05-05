@@ -1,0 +1,41 @@
+#bbpress-forums {
+	input,
+	textarea {
+		border: 1px solid $gray !important;
+		padding: 0.75em !important;
+	}
+	.button.submit {
+		@include button($purple, #fff);
+		border: 1px solid $purple;
+		font-size: 1em;
+		&:hover {
+			background-color: $orange;
+			color: #fff;
+			border-color: $orange;
+		}
+	}
+}
+#subscription-toggle span a,
+#favorite-toggle {
+	a {
+		color: #5e366a !important;
+		text-transform: none !important;
+		font-family: 'Driod Serif', serif !important;
+		font-size: 1.15em !important;
+		letter-spacing: 0 !important;
+		font-weight: 700 !important;
+	}
+}
+#subscription-toggle {
+	a {
+		margin: 0.5em 1em 1em;
+		display: block;
+		@include button($purple, #fff);
+		border: 1px solid $purple;
+		&:hover {
+			background-color: $orange;
+			color: #fff;
+			border-color: $orange;
+		}
+	}
+}

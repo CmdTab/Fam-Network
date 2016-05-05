@@ -34,7 +34,11 @@ if ( $order ) : ?>
 
 	<?php else : ?>
 
-		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>my-account" class="btn teal-btn">Back to My Account</a>
+		</p>
+
+
 
 		<ul class="woocommerce-thankyou-order-details order_details">
 			<li class="order">

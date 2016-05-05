@@ -1,7 +1,6 @@
 .content-area {
 	padding: 4em 0;
 }
-
 article {
 	padding-bottom: 2.5em;
 	margin-bottom: 2.5em;
@@ -19,14 +18,55 @@ article {
 	.entry-meta,
 	.entry-content {
 		font-size: 0.875em;
-	}
-	.entry-meta {
 		padding-bottom: 1em;
+	}
+	.entry-content {
+		.btn {
+			display: block;
+			width: 90%;
+			margin: 0 auto;
+			@include bp(30) {
+				width: auto;
+				display: inline-block;
+				margin: auto;
+			}
+		}
 	}
 	.entry-footer {
 		font-size: 0.875em;
+		margin: 1em 0 1em;
+		background: $gray;
 		.comments-link {
 			padding-right: 0.5em;
 		}
+		.comment-list {
+		   background: white;
+		   padding-top: 2em;
+		   li {
+		   	border-bottom: 1px solid $gray;
+		   	&:last-child {
+		   		border-bottom: none;
+		   	}
+		   }
+		}
+		h2,
+		h3 {
+			text-transform: uppercase;
+		}
+		textarea {
+	   	border: 1px solid $gray;
+	   	padding: 1em;
+	   	width: 100%;
+	   	display: block;
+	   }
+	   input[type="submit"] {
+	   	font-size: 1.25em;
+	   	padding: 0.75em 1.25em;
+	   }
+	   .post-type {
+	   	@include bp(30) {
+	   		text-align: right;
+	   	}
+	   }
 	}
 }
