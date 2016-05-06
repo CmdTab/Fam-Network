@@ -64,9 +64,61 @@ article {
 	   	padding: 0.75em 1.25em;
 	   }
 	   .post-type {
+	   	padding: 2em 2em 1em;
 	   	@include bp(30) {
 	   		text-align: right;
 	   	}
 	   }
+	}
+}
+.comments-area {
+	padding: 1em;
+	@include bp(50) {
+		padding: 2em;
+	}
+	article {
+		padding: 0;
+		margin: 0 0 2em;
+		border-bottom: 1px solid $gray;
+	}
+	.comment-author {
+		padding-bottom: 0.5em;
+	}
+	.comment-list {
+		padding: 2em;
+		margin-bottom: 2em;
+		@include bp(50) {
+			padding: 2em 3em;
+		}
+		> li {
+			margin-bottom: 2em;
+			padding-bottom: 0;
+			border: none !important;
+			&:last-child {
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+	.comment-content {
+		background: $gray;
+		padding: 1em;
+		margin: 1em 0;
+		p {
+			margin: 0;
+		}
+	}
+	.reply {
+		padding-bottom: 1em;
+		text-align: right;
+		a {
+			@include button($teal, #fff);
+			border: 1px solid $teal;
+			&:hover {
+				background-color: $purple;
+				color: #fff;
+				border-color: $purple;
+			}
+		}
 	}
 }

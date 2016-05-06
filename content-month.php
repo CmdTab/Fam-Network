@@ -18,6 +18,16 @@
 		<?php if( !empty($image) ): ?>
 			<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 		<?php endif; ?>
-		<h3><?php the_title(); ?></h3>
+		<?php
+			$title = get_sub_field('content_title');
+			$post_type = get_post_type();
+
+			if($title) {
+				echo '<h3>' . $title . '</h3>';
+			} else {
+				echo '<h3>' . $post_type . '</h3>';
+			}
+
+		?>
 	</a>
 </div><!-- #post-## -->

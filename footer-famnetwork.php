@@ -30,8 +30,8 @@
 </div><!--site-->
 <div class="modalVideo"><div class="modalContent"></div><a href = "#" class="hideModal">Close</a></div>
 <?php wp_footer(); ?>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/_js/famnetwork-min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="<?php // bloginfo('template_directory'); ?>/_js/famnetwork-min.js"></script> -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

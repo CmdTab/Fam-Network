@@ -50,7 +50,17 @@
 							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 						<?php } ?>
 
-						<h3><?php the_sub_field('content_title'); ?></h3>
+						<?php
+							$title = get_sub_field('content_title');
+							$post_type = get_post_type();
+
+							if($title) {
+								echo '<h3>' . $title . '</h3>';
+							} else {
+								echo '<h3>' . $post_type . '</h3>';
+							}
+						?>
+						
 					</a>
 				</li>
 					<?php
@@ -60,7 +70,16 @@
 				<li class="locked">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>premium-membership?add-to-cart=7324">
 						<img src ="<?php bloginfo('template_directory'); ?>/_i/locked.png">
-						<h3><?php the_sub_field('content_title'); ?></h3>
+						<?php
+							$title = get_sub_field('content_title');
+							$post_type = get_post_type();
+
+							if($title) {
+								echo '<h3>' . $title . '</h3>';
+							} else {
+								echo '<h3>' . $post_type . '</h3>';
+							}
+						?>
 					</a>
 				</li>
 					<?php
@@ -75,7 +94,16 @@
 						<?php } else { ?>
 							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 						<?php } ?>
-						<h3><?php the_sub_field('content_title'); ?></h3>
+						<?php
+							$title = get_sub_field('content_title');
+							$post_type = get_post_type();
+
+							if($title) {
+								echo '<h3>' . $title . '</h3>';
+							} else {
+								echo '<h3>' . $post_type . '</h3>';
+							}
+						?>
 					</a>
 				</li>
 			<?php endif; wp_reset_postdata(); endwhile;  ?>
@@ -121,7 +149,17 @@
 								<?php } else { ?>
 								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 								<?php } ?>
-								<h3><?php the_sub_field('global_content_title' , 'option'); ?></h3>
+								<?php
+									$title = get_sub_field('global_content_title' , 'option');
+									$post_type = get_post_type();
+
+									if($title) {
+										echo '<h3>' . $title . '</h3>';
+									} else {
+										echo '<h3>' . $post_type . '</h3>';
+									}
+
+								?>
 							</a>
 						</li>
 							<?php
@@ -131,7 +169,17 @@
 						<li class="locked">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>premium-membership?add-to-cart=7324">
 								<img src ="<?php bloginfo('template_directory'); ?>/_i/locked.png">
-								<h3><?php the_sub_field('global_content_title' , 'option'); ?></h3>
+								<?php
+									$title = get_sub_field('global_content_title' , 'option');
+									$post_type = get_post_type();
+
+									if($title) {
+										echo '<h3>' . $title . '</h3>';
+									} else {
+										echo '<h3>' . $post_type . '</h3>';
+									}
+
+								?>
 							</a>
 						</li>
 							<?php
@@ -146,7 +194,17 @@
 								<?php } else { ?>
 								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 								<?php } ?>
-								<h3><?php the_sub_field('global_content_title' , 'option'); ?></h3>
+								<?php
+									$title = get_sub_field('global_content_title' , 'option');
+									$post_type = get_post_type();
+
+									if($title) {
+										echo '<h3>' . $title . '</h3>';
+									} else {
+										echo '<h3>' . $post_type . '</h3>';
+									}
+
+								?>
 							</a>
 						</li>
 					<?php endif; wp_reset_postdata(); endwhile;  ?>

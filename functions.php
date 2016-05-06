@@ -206,6 +206,7 @@ add_action( 'widgets_init', 'start_widgets_init' );
 function start_scripts() {
 	wp_enqueue_style( 'start-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'famnetwork-min', get_template_directory_uri() . '/_js/famnetwork-min.js', array('jquery'));
 	//wp_enqueue_script( 'start-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	//wp_enqueue_script( 'start-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
