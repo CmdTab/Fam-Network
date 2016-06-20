@@ -60,7 +60,7 @@
 			}
 		}
 		del .amount::before {
-		  	content: 'Regular Price: ';
+		  	content: 'Free Member Price: ';
 		}
 
 		ins .amount::before {
