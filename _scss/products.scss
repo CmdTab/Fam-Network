@@ -32,25 +32,13 @@
 				transition: all 250ms ease-in-out;
 				&:hover {
 					background-color: darken($gray,5%);
+					.mem-price-premium {
+						background-color: darken($gray,5%);
+					}
 				}
 			}
 			h3 {
 				color: $text;
-			}
-			.price {
-				font-size: 0.875em;
-				del,
-				.amount {
-					color: $text;
-					
-				}
-				ins {
-					color: $orange;
-					.amount {
-						color: $orange;
-						
-					}
-				}
 			}
 			.button {
 				@include button($purple, #fff);
@@ -66,6 +54,45 @@
 				}
 			}
 		}
+	}
+	.price {
+		font-size: 0.875em;
+		margin-bottom: 0 !important;
+		> .amount {
+			&:before {
+				content: 'Regular Price: ';
+			}
+		}
+		del,
+		.amount {
+			color: $text;
+			
+		}
+		ins {
+			color: $orange;
+			text-decoration: none;
+			.amount {
+				color: $orange;
+				&:before {
+					display: inline-block;
+				}
+			}
+		}
+	}
+	.mem-price {
+		color: $orange;
+		font-weight: 700;
+		font-size: 0.875em;
+		margin-top: -0.1em;
+		display: block;
+	}
+	.mem-price-premium {
+		margin-top: -1.65em !important;
+		background: lighten($gray, 2.5%);
+		z-index: 1;
+		position: relative;
+		padding: 0 0 0.25em;
+		transition: all 250ms ease-in-out;
 	}
 	.woocommerce-pagination {
 		.page-numbers {
@@ -104,6 +131,18 @@
 		ins {
 			display: block;
 		}
+	}
+	.mem-price {
+		font-size: 1.2em;
+		margin-bottom: 0.875em !important;
+		display: block;
+	}
+	.mem-price-premium {
+		margin-top: -1.35em !important;
+		background: white;
+		z-index: 1;
+		position: relative;
+		padding: 0 0 0.25em;
 	}
 }
 .term-strong-marriages {

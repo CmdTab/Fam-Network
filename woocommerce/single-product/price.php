@@ -26,6 +26,29 @@ global $product;
 
 	<p class="price"><?php echo $product->get_price_html(); ?></p>
 
+	<?php if (!wc_memberships_is_user_active_member( $user_id, 'premium-membership' )) {
+		$normal_price = get_post_meta( get_the_ID(), '_regular_price', true);
+		$normal_sale = get_post_meta( get_the_ID(), '_sale_price', true);
+		if($sale) {
+			$memPrice = round($sale * 0.8, 2);
+		} else {
+			$memPrice = round($price * 0.8, 2);
+		}
+		echo '<span class="mem-price">Premium Member Sale Price: $'.$memPrice.'</span>';
+
+	} elseif (wc_memberships_is_user_active_member( $user_id, 'premium-membership' )) {
+		$price = get_post_meta( get_the_ID(), '_regular_price', true);
+		$sale = get_post_meta( get_the_ID(), '_sale_price', true);
+		if($sale) {
+			$memPrice = round($sale * 0.8, 2);
+		} else {
+			$memPrice = round($price * 0.8, 2);
+		}
+		
+		echo '<span class="mem-price mem-price-premium">Premium Member Sale Price: $'.$memPrice.'</span>';
+	}
+	?>
+
 	<meta itemprop="price" content="<?php echo esc_attr( $product->get_price() ); ?>" />
 	<meta itemprop="priceCurrency" content="<?php echo esc_attr( get_woocommerce_currency() ); ?>" />
 	<link itemprop="availability" href="http://schema.org/<?php echo $product->is_in_stock() ? 'InStock' : 'OutOfStock'; ?>" />

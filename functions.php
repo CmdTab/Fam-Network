@@ -355,6 +355,26 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 
 });
 
-add_filter('wc_memberships_member_prices_display_sale_price', '__return_true');
+function membership_pricing_visible() {
+	if (!wc_memberships_is_user_active_member( $user_id, 'premium-membership' )) {
+		$price = get_post_meta( get_the_ID(), '_regular_price', true);
+		$sale = get_post_meta( get_the_ID(), '_sale_price', true);
+		if($sale) {
+			$memPrice = round($sale * 0.8, 2);
+		} else {
+			$memPrice = round($price * 0.8, 2);
+		}
+		echo '<span class="mem-price">Premium Member Sale Price: $'.$memPrice.'</span>';
+	} elseif (wc_memberships_is_user_active_member( $user_id, 'premium-membership' )) {
+		$price = get_post_meta( get_the_ID(), '_regular_price', true);
+		$sale = get_post_meta( get_the_ID(), '_sale_price', true);
+		if($sale) {
+			$memPrice = round($sale * 0.8, 2);
+		} else {
+			$memPrice = round($price * 0.8, 2);
+		}
+		echo '<span class="mem-price mem-price-premium">Premium Member Sale Price: $'.$memPrice.'</span>';
+	}
+}
 
-$price = get_post_meta( get_the_ID(), '_regular_price');
+add_action ( 'woocommerce_after_shop_loop_item_title' , 'membership_pricing_visible' , 15 );
