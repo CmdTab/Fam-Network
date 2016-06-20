@@ -354,3 +354,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
     return $title;
 
 });
+
+add_filter('wc_memberships_member_prices_display_sale_price', '__return_true');
+
+$price = get_post_meta( get_the_ID(), '_regular_price');

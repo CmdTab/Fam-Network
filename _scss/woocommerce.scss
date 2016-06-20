@@ -60,11 +60,11 @@
 			}
 		}
 		del .amount::before {
-		  	content: 'Free Member Price: ';
+		  	content: 'Regular Price: ';
 		}
 
 		ins .amount::before {
-		  	content: 'Premium Member Price:';
+		  	content: 'Sale Price:';
 		  	margin-right: 0.25em;
 		  	display: block;
 		}
