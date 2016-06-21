@@ -8,7 +8,7 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="store">
+<html <?php language_attributes(); ?> class="store <?php if (wc_memberships_is_user_active_member( $user_id, 'premium-membership' )) { echo 'premium-member'; } ?>">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">

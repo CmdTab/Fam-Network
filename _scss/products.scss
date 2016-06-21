@@ -57,7 +57,7 @@
 	}
 	.price {
 		font-size: 0.875em;
-		margin-bottom: 0 !important;
+		margin-bottom: 0.875em !important;
 		> .amount {
 			&:before {
 				content: 'Regular Price: ';
@@ -73,26 +73,25 @@
 			text-decoration: none;
 			.amount {
 				color: $orange;
-				&:before {
-					display: inline-block;
-				}
 			}
+		}
+		> del {
+			ins .amount::before {
+				display: inline-block;
+				content: 'Free Member Price';
+			}
+		}
+		> ins .amount::before {
+			display: inline-block;
+			content: 'Free Member Price';
 		}
 	}
 	.mem-price {
 		color: $orange;
 		font-weight: 700;
 		font-size: 0.875em;
-		margin-top: -0.1em;
+		margin-top: -0.875em;
 		display: block;
-	}
-	.mem-price-premium {
-		margin-top: -1.65em !important;
-		background: lighten($gray, 2.5%);
-		z-index: 1;
-		position: relative;
-		padding: 0 0 0.25em;
-		transition: all 250ms ease-in-out;
 	}
 	.woocommerce-pagination {
 		.page-numbers {
@@ -133,16 +132,9 @@
 		}
 	}
 	.mem-price {
-		font-size: 1.2em;
+		font-size: 1.25em;
 		margin-bottom: 0.875em !important;
 		display: block;
-	}
-	.mem-price-premium {
-		margin-top: -1.35em !important;
-		background: white;
-		z-index: 1;
-		position: relative;
-		padding: 0 0 0.25em;
 	}
 }
 .term-strong-marriages {
@@ -193,5 +185,22 @@
 			float: none;
 			margin: 0 auto;
 		}
+	}
+}
+.woocommerce-variation-price {
+	.mem-price {
+	    margin-top: 0;
+	}
+	.amount {
+		margin-bottom: 0.875em;
+		display: block;
+	}
+}
+.premium-member {
+	.price > ins .amount::before {
+		content: 'Premium Member Price' !important;
+	}
+	.price .amount {
+		margin-bottom: 0;
 	}
 }
