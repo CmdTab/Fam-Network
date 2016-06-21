@@ -81,7 +81,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 53332,
+		"initialSize": 76640,
 		"inputAbbreviatedPath": "\/_i\/dash-bg.jpg",
 		"outputAbbreviatedPath": "\/_i\/dash-bg.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -2256,7 +2256,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Tristan Swire",
+"lastSavedByUser": "Josh Rives",
 "manualImportLinks": {
 	"\/_js\/famnetwork.js": [
 		{
