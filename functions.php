@@ -369,7 +369,7 @@ function membership_pricing_visible() {
 			} else {
 				$memPrice = round($price * 0.8, 2);
 			}
-			echo '<span class="mem-price">Premium Member Sale Price: $'.$memPrice.'</span>';
+			echo '<span class="mem-price">Premium Member Price: $'.$memPrice.'</span>';
 		}
 	} 
 }
