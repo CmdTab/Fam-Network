@@ -84,6 +84,11 @@
 			min-height: 6em;
 		}
 	}
+	.custom-checkout-field {
+		h3 {
+			margin-bottom: 0.25em;
+		}
+	}
 	.woocommerce-billing-fields {
 		.woocommerce-invalid input {
 			border: 2px solid $red;

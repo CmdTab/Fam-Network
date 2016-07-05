@@ -2,11 +2,11 @@
 	background: $purple;
 	text-align: center;
 	color: #fff;
-	padding: 0;
+	padding: 0 0 0.75em;
 	position: relative;
 	z-index: 2;
 	@include bp(44) {
-		padding: 4em 0;
+		padding: 4em 0 0.75em;
 	}
 	.three-list {
 		ul {
@@ -32,7 +32,21 @@
 					margin: 0;
 				}
 			}
-			
+			label {
+				display: none !important;
+			}
+			.ginput_complex {
+				margin-left: 0 !important;
+				width: 100% !important;
+				.name_first,
+				.name_last {
+					width: 47.5% !important;
+					padding: 0 !important;
+				}
+				.name_first {
+					margin-right: 4% !important;
+				}
+			}
 		}
 	}
 	a {
@@ -103,6 +117,27 @@
 				color: $purple;
 				border: none;
 			}
+		}
+	}
+	.social-icons {
+		display: block;
+		margin: 2em auto 0;
+		padding-top: 1.5em;
+		border-top: 1px solid white;
+		a {
+			display: inline-block;
+			padding-right: 0.5em;
+			transition: all 250ms ease-in-out;
+			&:last-child {
+				padding-right: 0;
+			}
+			&:hover {
+				color: $orange;
+			}
+		}
+		h4 {
+			margin-bottom: 0.25em;
+			font-size: 0.875em;
 		}
 	}
 }

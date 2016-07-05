@@ -25,6 +25,11 @@
 					</a>
 				</li>
 			</ul>
+			<div class="social-icons">
+				<h4>Find us here</h4>
+				<a href="https://www.instagram.com/famnetwork/" target="_blank"><?php include('svg/icon-instagram.php'); ?></a>
+				<a href="https://www.facebook.com/The-FAM-Network-896200507175204/?fref=nf" target="_blank"><?php include('svg/icon-facebook.php'); ?></a>
+			</div>
 		</footer><!-- #colophon -->
 	</div><!-- site-content -->
 </div><!--site-->
