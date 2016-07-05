@@ -16,6 +16,16 @@
 
 				<header class="archive-header">
 					<h1 class="archive-title">
+						<?php 
+
+							$image = get_field('taxonomy_icon' , 'option');
+
+							if( !empty($image) ): ?>
+
+								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+							<?php endif; ?>
+
 						<?php
 							if ( is_category() ) :
 								single_cat_title();
@@ -29,6 +39,7 @@
 
 							endif;
 						?>
+						<?php the_field('taxonomy_title' , 'option'); ?>
 					</h1>
 					<?php
 						// Show an optional term description.
