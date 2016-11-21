@@ -381,18 +381,18 @@ add_filter( 'wc_memberships_member_prices_display_sale_price', '__return_true' )
 /**
  * Add the field to the checkout
  */
-add_action( 'woocommerce_after_order_notes', 'my_custom_checkout_field' );
+add_action( 'woocommerce_after_checkout_billing_form', 'my_custom_checkout_field' );
 
 function my_custom_checkout_field( $checkout ) {
 
-    echo '<div id="my_custom_checkout_field" class="custom-checkout-field"><h3>' . __('Church Size') . '</h3>';
+    echo '<div id="my_custom_checkout_field" class="custom-checkout-field"><h3>' . __('Organization Size') . '</h3>';
 
-    woocommerce_form_field( 'my_field_name', array(
+    woocommerce_form_field( 'org_size', array(
         'type'          => 'text',
         'class'         => array('my-field-class form-row-wide'),
-        'label'         => __('What is the size of your church?'),
+        'label'         => __('What is the size of your organization?'),
         'placeholder'   => __('100-200'),
-        ), $checkout->get_value( 'church_size' ));
+        ), $checkout->get_value( 'org_size' ));
 
     echo '</div>';
 
